@@ -96,7 +96,7 @@ module.exports = "<p>\r\n  anagrama works!\r\n</p>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n  <header>\r\n      <h1 class=\"titulo\" style=\"font-size:50px\">Sala de Juegos</h1>\r\n      <p>Agustín Gómez</p>\r\n      <div class=\"row\">\r\n        <div class=\"col-3\"></div>\r\n        <div class=\"col-6\">\r\n            <div class=\"row\" id=\"botones\">\r\n                <div class=\"col-6 h-100\">\r\n                    <button id=\"github\" class=\"btn hvr-shadow hvr-fade\" href=\"https://github.com/octaviovillegas\" target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></button>\r\n                  </div>\r\n                  <div class=\"col-6 h-100\">\r\n                    <button class=\"btn hvr-shadow hvr-fade\" routerLink=\"/QuienSoy\">¿Quien Soy? <i class=\"fa fa-user\"></i></button>\r\n                  </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-3\"></div>\r\n      </div>\r\n  </header>\r\n</div>"
+module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n    <header>\r\n        <h1 class=\"titulo\" style=\"font-size:50px\">Sala de Juegos</h1>\r\n        <p>Agustín Gómez</p>\r\n        <div class=\"row\">\r\n            <div class=\"col-3\"></div>\r\n            <div class=\"col-6\">\r\n                <div class=\"row\" id=\"botones\">\r\n                    <div class=\"col-6 h-100\">\r\n                        <a href=\"https://www.github.com/agustinezequielgomez\" target=\"_blank\"><button id=\"github\" class=\"btn hvr-shadow hvr-fade\">en GitHub <i class=\"fa fa-github\"></i></button></a>\r\n                    </div>\r\n                    <div class=\"col-6 h-100\">\r\n                        <button class=\"btn hvr-shadow hvr-fade\" routerLink=\"/QuienSoy\">¿Quien Soy? <i class=\"fa fa-user\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-3\"></div>\r\n        </div>\r\n    </header>\r\n</div>"
 
 /***/ }),
 
@@ -108,6 +108,17 @@ module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n  <header>\
 /***/ (function(module, exports) {
 
 module.exports = "\r\n\r\n<div class=\"panel panel-default\">\r\n    <div class=\"hero-text\">\r\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\r\n        <p>Octavio villegas</p>\r\n        <a href=\"https://github.com/octaviovillegas\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\r\n        <a  routerLink=\"/QuienSoy\"target=\"_blank\">Quien Soy? <i class=\"fa fa-github\"></i></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>Registrase</a></li>\r\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Ingresar</a></li>\r\n          </ul>\r\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/componentes/hi-lo/hi-lo.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/componentes/hi-lo/hi-lo.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"padding-top vivify pullUp\">\n    <div *ngIf=\"this.destroyComponent == false\" id=\"container\" class=\"container rounded\" [ngClass]=\"{vivify: true, driveOutLeft: this.gameFinished == true}\">\n        <div id=\"card-container\">\n            <img class=\"cards\" id=\"currentCard\" [ngClass]=\"{vivify: true, flipInY: this.cardChosen==true, flipOutY: this.hideCurrent == true}\" src=\"{{this.currentCard.img}}\" alt=\"\">\n            <img  clasS=\"cards\" id=\"previousCard\" [ngClass]=\"{vivify: true, flipInY: this.currentToPrevious==true}\" src=\"{{this.previousCard.img}}\" alt=\"\">\n        <div>\n        </div>\n        </div>\n        <div id=\"buttons\">\n            <button [disabled]=\"!this.hiloButtonsEnabled\" id=\"higher\" class=\"d-block w-100\" mat-raised-button (click)=\"decideCard('higher')\">Alto <mat-icon>keyboard_arrow_up</mat-icon></button>\n            <button [disabled]=\"!this.hiloButtonsEnabled\" id=\"lower\" class=\"d-block w-100\" mat-raised-button (click)=\"decideCard('lower')\">Bajo <mat-icon>keyboard_arrow_down</mat-icon></button>\n            <mat-icon id=\"failure\" *ngIf=\"this.fail == true\" [class.spinOut]=\"this.exitResult == true\" class=\"icons vivify driveInTop spinIn\">clear</mat-icon>\n            <mat-icon id=\"success\" *ngIf=\"this.success == true\" [class.spinOut]=\"this.exitResult == true\" class=\"icons vivify driveInTop spinIn\">done_all</mat-icon>\n        </div>\n        <button [disabled]=\"this.playing == true\" id=\"jugar\" mat-raised-button (click)=\"jugar()\">Jugar</button>\n        <p id=\"puntuacion\">{{this.puntuacion}}/10</p>\n    </div>\n    <div *ngIf=\"this.gameFinished == true\" class=\"vivify driveInRight delay-1000 text-center\">\n        <p class=\"gameOver\">¡Juego Terminado!</p>\n        <p class=\"gameOver\">Tu puntuacion fue {{this.puntuacion}} de 10</p>\n        <button class=\"d-block w-100 gameOverButtons\" mat-raised-button (click)=\"again()\">Jugar otra vez</button>\n        <button class=\"d-block w-100 gameOverButtons\" mat-raised-button (click)=\"principal()\">Menu Principal</button>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -184,7 +195,7 @@ module.exports = "<!--div *ngFor=\"let juego of listado\">\r\n\r\n<p> {{juego.no
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!--input type=\"button\" (click)=\"llamaService()\" class=\"btn btn-info\" value=\"Pulsame\" > \r\n<input type=\"button\" (click)=\"llamaServicePromesa()\" class=\"btn btn-info\" value=\"Pulsame Promesa\" --> \r\n\r\n<!-- Centered Pills -->\r\n<ul class=\"nav nav-pills nav-justified\">\r\n    <li class=\"active\"><a routerLink=\"/Principal\">Sala de Juegos</a></li>\r\n    <li><a (click)=\"llamaService()\">Servicio</a></li>\r\n    <li><a (click)=\"llamaServicePromesa()\">Serv Promesa</a></li>\r\n    <li><a (click)=\"llamaServicePromesa()\">Serv observable</a></li>\r\n  </ul>\r\n  \r\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>\r\n\r\n"
+module.exports = "<table class=\"table table-responsive overflow-auto\">\r\n  <thead>\r\n    <tr>\r\n      <th>Usuario</th>\r\n      <th>Fecha</th>\r\n      <th>Puntuacion</th>\r\n    </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let registro of this.listado\">\r\n        <td scope=\"row\">{{registro.usuario}}</td>\r\n        <td>{{registro.fecha | date}}</td>\r\n        <td>{{registro.puntuacion}}</td>\r\n      </tr>\r\n    </tbody>\r\n</table>"
 
 /***/ }),
 
@@ -206,7 +217,7 @@ module.exports = "<p>\r\n  listados works!\r\n</p>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--div style=\"margin: 20% auto; width: 30%;\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-6\">\r\n      Usuario\r\n    </div>\r\n    <div class=\"col-lg-6\">\r\n      <input type=\"text\"  [(ngModel)]=\"usuario\">\r\n    </div>\r\n  </div>\r\n  <div class=\"row\" style=\"margin-top: 5px\">\r\n    <div class=\"col-lg-6\">\r\n      Clave\r\n    </div>\r\n    <div class=\"col-lg-6\">\r\n      <input type=\"password\" [(ngModel)]=\"clave\">\r\n    </div>\r\n  </div>\r\n  <div class=\"row\" style=\"text-align: center; margin-top: 10px\">\r\n    <div class=\"col-lg-12\">\r\n      <button (click)=\"Entrar()\" class=\"btn btn-info btn-lg\" >Entrar</button>\r\n    </div>\r\n  </div>\r\n</div-->\r\n<div class=\"container-fluid animated fadeIn\">\r\n<form class=\"form-group\">\r\n        <div class=\"imgcontainer\">\r\n          <img src=\"./assets/imagenes/login.png\" alt=\"Avatar\" class=\"img-fluid mx-auto d-block\">\r\n        </div>\r\n    <mat-form-field appearance=\"outline\" id=\"email\">\r\n      <mat-label>Email</mat-label>\r\n      <input matInput [formControl]=\"emailFormControl\" [(ngModel)]=\"usuario\">\r\n      <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n        Ingrese un email valido\r\n      </mat-error>\r\n      <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n        El  <strong>email</strong> es requerido \r\n      </mat-error>\r\n    </mat-form-field>\r\n    <mat-form-field appearance=\"outline\" id=\"clave\">\r\n      <mat-label>Clave</mat-label>\r\n      <input matInput [formControl]=\"claveFormControl\" [(ngModel)]=\"clave\">\r\n      <mat-error *ngIf=\"claveFormControl.hasError('required')\">La <strong>clave</strong> es requerida</mat-error>\r\n    </mat-form-field>\r\n    <button mat-raised-button id=\"ingresar\" class=\"btn form-control\">Ingresar</button>\r\n    <mat-checkbox>Recordar usuario</mat-checkbox>\r\n    <form id=\"register\" class=\"form-group\">\r\n      <a [routerLink]=\"['/']\"><button mat-raised-button color=\"warn\">Cancelar</button></a>\r\n      <a id=\"registerBtn\" [routerLink]=\"['/Registro']\"><button mat-raised-button color=\"primary\">Registrarse</button></a>\r\n    </form>\r\n  </form>\r\n</div>\r\n <!-- <div class=\"container\" >\r\n  <div class=\"jumbotron\" style=\"padding:50px;\">\r\n    <form action=\"return true;\">\r\n      <div class=\"imgcontainer\">\r\n        <img src=\"./assets/imagenes/login.png\" alt=\"Avatar\" class=\"avatar\" max-width=\"104\" >\r\n      </div>\r\n\r\n      <div class=\"container\">\r\n        <label><b>Usuario</b></label>\r\n        <input type=\"text\" placeholder=\"Usuario\"  [(ngModel)]=\"usuario\"  name=\"uname\" required>\r\n\r\n        <label><b>Clave</b></label>\r\n        <input type=\"password\" placeholder=\"Clave\"  [(ngModel)]=\"clave\" name=\"psw\" required>\r\n            \r\n        <button *ngIf=\"logeando\"  (click)=\"MoverBarraDeProgreso()\" >Ingresar</button>\r\n       \r\n        <div *ngIf=\"!logeando\" class=\"progress\">\r\n            <div class=\"progress-bar progress-bar-info progress-bar-striped active\" [class]=\"clase\" role=\"progressbar\" aria-valuenow=\"10\" aria-valuemin=\"0\" aria-valuemax=\"100\" [style.width]=\"ProgresoDeAncho\" >\r\n              {{progresoMensaje}} - {{progreso}}%\r\n            </div>\r\n        </div>\r\n       \r\n        <input type=\"checkbox\" checked=\"checked\"> Recordar mis datos\r\n      </div>\r\n\r\n      <div class=\"container\" style=\"background-color:#f1f1f1\">\r\n        <button type=\"button\" class=\"cancelbtn\">Cancelar</button>\r\n        <button type=\"button\" class=\"aceptbtn\" routerLink=\"/Registro\" >Registrarse</button>\r\n        <span class=\"psw\">Te olvidaste <a href=\"#\">la clave?</a></span>\r\n      </div>\r\n     \r\n    </form>\r\n  </div>\r\n</div> -->"
+module.exports = "<div class=\"container-fluid animated fadeIn\">\r\n<form class=\"form-group\">\r\n        <div class=\"imgcontainer\">\r\n          <img src=\"./assets/imagenes/login.png\" alt=\"Avatar\" class=\"img-fluid mx-auto d-block\">\r\n        </div>\r\n    <mat-form-field appearance=\"outline\" id=\"email\">\r\n      <mat-label>Email</mat-label>\r\n      <input matInput [formControl]=\"emailFormControl\" [(ngModel)]=\"usuario\">\r\n      <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n        Ingrese un email valido\r\n      </mat-error>\r\n      <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n        El  <strong>email</strong> es requerido \r\n      </mat-error>\r\n    </mat-form-field>\r\n    <mat-form-field appearance=\"outline\" id=\"clave\">\r\n      <mat-label>Clave</mat-label>\r\n      <input matInput [type]=\"this.showPass == true? 'text':'password'\" [formControl]=\"claveFormControl\" [(ngModel)]=\"clave\">\r\n      <mat-error *ngIf=\"claveFormControl.hasError('required')\">La <strong>clave</strong> es requerida</mat-error>\r\n    </mat-form-field>\r\n    <button mat-raised-button id=\"ingresar\" class=\"btn form-control\" (click)=\"login()\">Ingresar</button>\r\n    <mat-progress-bar *ngIf=\"this.logingIn\" id=\"progressBar\" class=\"vivify fadeIn\" mode=\"indeterminate\"></mat-progress-bar>\r\n    <mat-checkbox name=\"showPass\" [(ngModel)]=\"this.showPass\">Mostrar contraseña</mat-checkbox>\r\n    <br>\r\n    <mat-checkbox>Recordar usuario</mat-checkbox>\r\n    <form id=\"register\" class=\"form-group\">\r\n      <a [routerLink]=\"['/']\"><button mat-raised-button color=\"warn\">Cancelar</button></a>\r\n      <a id=\"registerBtn\" [routerLink]=\"['/Registro']\"><button mat-raised-button color=\"primary\">Registrarse</button></a>\r\n    </form>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -228,7 +239,7 @@ module.exports = "<h1>{{ title }}</h1>\r\n\r\n<!-- this creates a google map on 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid animated fadeIn\">\r\n  <div class=\"card-deck\">\r\n    <div class=\"card flip-card\" *ngFor='let contenido of cardContent'>\r\n        <div class=\"flip-card-inner\">\r\n          <div class=\"flip-card-front\"  [style.background-image]=\"contenido.link\" [attr.data-loc]=\"contenido.link\">\r\n          </div>\r\n          <div class=\"card-body flip-card-back\">\r\n              <h1>{{contenido.title}}</h1>\r\n              <p class=\"title\">{{contenido.description}}</p>\r\n              <p>UTN FRA</p>\r\n              <div class=\"row\">\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-dribbble\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-linkedin\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></div>\r\n              </div>\r\n              <button id=\"play\" class=\"block btn3d btn\">Jugar</button>\r\n          </div>\r\n        </div>\r\n    </div>\r\n  </div>"
+module.exports = "<div class=\"container-fluid animated fadeIn\">\r\n  <div class=\"card-deck\">\r\n    <div class=\"card flip-card\" *ngFor='let contenido of cardContent'>\r\n        <div class=\"flip-card-inner\">\r\n          <div class=\"flip-card-front\"  [style.background-image]=\"contenido.img\" [attr.data-loc]=\"contenido.link\">\r\n          </div>\r\n          <div class=\"card-body flip-card-back\">\r\n              <h1>{{contenido.title}}</h1>\r\n              <p class=\"title\">{{contenido.description}}</p>\r\n              <p>UTN FRA</p>\r\n              <div class=\"row\">\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-dribbble\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-linkedin\"></i></a></div>\r\n                <div class=\"col-3 hvr-grow-shadow\"><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></div>\r\n              </div>\r\n              <button id=\"play\" class=\"block btn3d btn\" (click)=\"Jugar(contenido.title)\">Jugar</button>\r\n          </div>\r\n        </div>\r\n    </div>\r\n  </div>"
 
 /***/ }),
 
@@ -250,7 +261,7 @@ module.exports = "<nav id=\"navBar\" class=\"navbar navbar-expand-lg\">\r\n  <bu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n  <div id=\"topRow\" class=\"row\">\r\n    <div class=\"col-1\"></div>\r\n    <div class=\"col-10\">\r\n      <div class=\"row\">\r\n        <table class=\"table\">\r\n          <app-cabecera></app-cabecera>\r\n        </table>\r\n        <table class=\"table table-responsive\">\r\n          <thead>\r\n            <tr>\r\n              <th scope=\"col\" id=\"menuPrincipal\">Menu Principal</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <div class=\"col-12\">\r\n              <tr *ngFor=\"let contenido of content\">\r\n                <a routerLink=\"{{contenido.link}}\">\r\n                  <div class=\"hvr-bounce-to-left media\">\r\n                    <div class=\"col-2 img-col\">\r\n                      <td><img id=\"imagen\" src=\"{{contenido.img}}\" class=\"media-object imagenDeMenu img-fluid\"></td>\r\n                    </div>\r\n                    <div class=\"col-10\" id=\"content\">\r\n                      <td>\r\n                        <h4 class=\"media-heading\">{{contenido.heading}}</h4>\r\n                        <p>{{contenido.content}}</p>\r\n                      </td>\r\n                    </div>\r\n                  </div>\r\n                </a>\r\n              </tr>\r\n            </div>\r\n          </tbody>\r\n        </table>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-1\"></div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n    <div id=\"topRow\" class=\"row\">\r\n        <div class=\"col-1\"></div>\r\n        <div class=\"col-10\">\r\n            <div class=\"row\">\r\n                <table class=\"table\">\r\n                    <app-cabecera></app-cabecera>\r\n                </table>\r\n                <table class=\"table table-responsive\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th scope=\"col\" id=\"menuPrincipal\">Menu Principal</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <div class=\"col-12\">\r\n                            <tr *ngFor=\"let contenido of content\">\r\n                                <a routerLink=\"{{contenido.link}}\">\r\n                                    <div id=\"hoverable\" class=\"hvr-bounce-to-left media\">\r\n                                        <div class=\"col-2 img-col\">\r\n                                            <td><img id=\"imagen\" src=\"{{contenido.img}}\" class=\"media-object imagenDeMenu img-fluid\"></td>\r\n                                        </div>\r\n                                        <div class=\"col-10\" id=\"content\">\r\n                                            <td>\r\n                                                <h4 class=\"media-heading\">{{contenido.heading}}</h4>\r\n                                                <p>{{contenido.content}}</p>\r\n                                            </td>\r\n                                        </div>\r\n                                    </div>\r\n                                </a>\r\n                            </tr>\r\n                        </div>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-1\"></div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -261,7 +272,7 @@ module.exports = "<div class=\"container-fluid fadeIn animated\">\r\n  <div id=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <nav class=\"navbar navbar-default\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>                        \r\n        </button>\r\n        <a class=\"navbar-brand\" href=\"./\">Sala De Juegos</a>\r\n      </div>\r\n      <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n          <li><a href=\"./QuienSoy#quien\">Quien</a></li>\r\n          <li><a href=\"/TP_LAV4_2017/QuienSoy#que\">Ques es</a></li>\r\n          <li><a href=\"./QuienSoy#donde\">Donde</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n  \r\n  <!-- First Container -->\r\n  <div id =\"quiwn\"class=\"container-fluid bg-1 text-center\">\r\n    <h3 class=\"margin\">Quién Soy?</h3>\r\n    <img src=\"./assets/imagenes/quiensoy.jpg\" class=\"img-responsive img-circle margin\" style=\"display:inline\" alt=\"Bird\" width=\"350\" height=\"350\">\r\n    <h3>Soy Un alumno de la UTN FRA</h3>\r\n  </div>\r\n  \r\n  <!-- Second Container -->\r\n  <div id =\"que\" class=\"container-fluid bg-2 text-center\">\r\n    <h3 class=\"margin\">Esto es un trabajo práctico</h3>\r\n    <p>Cada universidad, cada facultad, cada carrera y obviamente cada materia en particular tiene estrategias didácticas y formas de evaluación diferentes. A pesar de que en muchos casos las universidades intentan estandarizar la forma de dictar clase para generar un orden en las planificaciones cuatrimestre a cuatrimestre, las formas de evaluación son elementales tanto para las instituciones y profesores como para los alumnos. A través de la evaluación formativa el educador busca información en el alumno para lograr comprender cómo se está\r\n      produciendo el proceso de aprendizaje y poder reajustar los objetivos pedagógicos. Y para el alumno es una muestra del progreso que está logrando y si puede aplicar, materializar y darle visibilidad a la comprensión del tema. Según Black y William (1998), la evaluación formativa, ayuda a que los estudiantes sean independientes a la hora del aprendizaje, es decir, se presenta como receptor, autorregulador y centro de esa misma evaluación. </p>\r\n    <a href=\"#\" class=\"btn btn-default btn-lg\">\r\n      <span class=\"glyphicon glyphicon-file\"></span> Descargar PDF\r\n    </a>\r\n  </div>\r\n  \r\n  <!-- Third Container (Grid) -->\r\n  <div id =\"donde\" class=\"container-fluid bg-3 text-center\">    \r\n    <h3 class=\"margin\">Dónde Funciona?</h3><br>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <p>Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma</p>\r\n        <img src=\"./assets/imagenes/quiensoy1.png\" class=\"img-responsive margin imagenDeQuienSoy\"  alt=\"Image\">\r\n      </div>\r\n      <div class=\"col-sm-4\"> \r\n        <p>Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y pensado en el comportamiento del usuario y en la funcionalidad.</p>\r\n        <img src=\"./assets/imagenes/quiensoy2.jpg\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\r\n      </div>\r\n      <div class=\"col-sm-4\"> \r\n        <p>Para los sistemas operativos lideres en el mercado del consumo masivo</p>\r\n        <img src=\"./assets/imagenes/quiensoy3.png\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  <!-- Footer -->\r\n  <footer class=\"container-fluid bg-4 text-center\">\r\n    <p>Modificado por <a href=\"https://www.octavio.com.ar\">www.octavio.com.ar</a></p> \r\n  </footer>"
+module.exports = "<!-- <nav class=\"navbar navbar-default\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>                        \r\n        </button>\r\n        <a class=\"navbar-brand\" href=\"./\">Sala De Juegos</a>\r\n      </div>\r\n      <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n          <li><a href=\"./QuienSoy#quien\">Quien</a></li>\r\n          <li><a href=\"/TP_LAV4_2017/QuienSoy#que\">Ques es</a></li>\r\n          <li><a href=\"./QuienSoy#donde\">Donde</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav> -->\r\n<div *ngIf=\"this.initView\" class=\"vivify fadeIn\">\r\n<nav id=\"navBar\" class=\"navbar navbar-expand-lg\">\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarMenu\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"true\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarMenu\">\r\n        <ul class=\"navbar-nav\">\r\n            <li class=\"tabs\"><a (click)=\"navigateTo('who', 700)\" class=\"hvr-underline-from-center\">¿Quien?</a></li>\r\n            <li class=\"tabs\"><a (click)=\"navigateTo('what', 700)\" class=\"hvr-underline-from-center\">¿Que es?</a></li>\r\n            <li class=\"tabs\"><a (click)=\"navigateTo('where', 700)\" class=\"hvr-underline-from-center\">¿Donde?</a></li>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n\r\n<!-- First Container -->\r\n<div id=\"who\" class=\"container-fluid text-center\">\r\n    <h3 class=\"vivify fadeInTop\" id=\"whoAmIText\">¿Quién Soy?</h3>\r\n    <img id=\"whoAmIImg\" src=\"./assets/imagenes/quiensoy.jpg\" class=\"img-fluid vivify flipInY duration-1500\" style=\"display:inline\">\r\n    <h3 id=\"whoAmIText\" class=\"vivify fadeInBottom\">Mi nombre es Agustín Gómez y soy Full-Stack Developer.</h3>\r\n    <br>\r\n    <br>\r\n</div>\r\n\r\n<!-- Second Container -->\r\n<div data-aos=\"zoom-out-down\" data-aos-anchor-placement=\"bottom-center\" data-aos-easing=\"ease-in-out\" id=\"what\" class=\"container-fluid bg-2 text-center\">\r\n    <h3 class=\"margin\">Esto es un trabajo práctico</h3>\r\n    <p>Con el objetivo de demostrar los conocimientos adquiridos en la cátedra sobre desarrollo y programacion web, así como también los cononocimientos adquiridos a lo largo de la carrera.</p>\r\n    <p>El juego a realizar es Hi-Lo. Se le mostrará al jugador una carta y debera adivinar si la siguiente en salir será de mayor o menor valor.</p>\r\n    <img src=\"../../../assets/imagenes/hi-lo.png\" alt=\"\">\r\n</div>\r\n\r\n<!-- Third Container (Grid) -->\r\n<div data-aos=\"fade-up\" data-aos-anchor-placement=\"bottom-center\" id=\"where\" class=\"container-fluid text-center\">\r\n    <h3 class=\"margin\">¿Dónde Funciona?</h3><br>\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4\">\r\n            <p>Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma</p>\r\n            <img src=\"./assets/imagenes/quiensoy1.webp\" class=\"img-responsive margin w-100\">\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <p>Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y pensado en el comportamiento del usuario y en la funcionalidad.</p>\r\n            <img src=\"./assets/imagenes/quiensoy2.jpg\" class=\"img-responsive margin w-100\">\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <p>Para los sistemas operativos lideres en el mercado del consumo masivo</p>\r\n            <img src=\"./assets/imagenes/quiensoy3.jpg\" class=\"img-responsive margin w-100\">\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Footer -->\r\n<footer class=\"container-fluid bg-4 text-center\">\r\n    <p>Creado por <a href=\"https://github.com/agustinezequielgomez\" target=\"blank\">Agustín Gómez</a></p>\r\n</footer>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -273,6 +284,105 @@ module.exports = "  <nav class=\"navbar navbar-default\">\r\n    <div class=\"co
 /***/ (function(module, exports) {
 
 module.exports = "<body>\r\n  <div class=\"jumbotron\">\r\n    <h2 id=\"terminos\">Terminos y condiciones</h2>\r\n    <p>El Gobierno de la República Argentina (en adelante el “Gobierno Nacional”) no es responsable por los daños y perjuicios que puedan surgir, incluyendo, sin límite, daños, pérdidas o gastos directos, indirectos, que surjan en relación con el uso de los Activos Digitales o la imposibilidad de uso, en relación con cualquier falla en el vencimiento, error, omisión, interrupción, defecto, demora en la operación o transmisión, virus de computadora o falla del sistema de línea, aún en el caso de que el Gobierno Nacional o sus representantes fueran informados sobre la posibilidad de dichos daños, pérdidas o gastos.</p>\r\n    <p>El Gobierno Nacional no controla ni garantiza la ausencia de virus ni de otros elementos en los contenidos que puedan producir alteraciones en su sistema informático (software y hardware) o en los documentos electrónicos y ficheros almacenados en su sistema informático.</p>\r\n    <p>El Gobierno Nacional no puede garantizar que la transmisión de información por parte de los Usuarios sea completamente segura. El Usuario asume este riesgo.</p>\r\n   \r\n  </div>\r\n  <strong><p>No leer lo anterior, es solo un ejemplo sacado de https://www.argentina.gob.ar/terminos-y-condiciones </p></strong>\r\n  <button onclick=\"document.getElementById('id01').style.display='block'\" style=\"width:auto;\">Acepto</button>\r\n  <button  class=\"cancelbtn\"  routerLink=\"/Principal\" style=\"width:auto;\">No acepto</button>\r\n  <div id=\"id01\" class=\"modal\">\r\n    <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">×</span>\r\n    <form class=\"modal-content animate\" >\r\n      <div class=\"container\">\r\n        <label><b>Email</b></label>\r\n        <input type=\"text\" placeholder=\"Ingresa tu correo\" name=\"email\" required>\r\n  \r\n        <label><b>Clave</b></label>\r\n        <input type=\"password\" placeholder=\"Aca la clave\" name=\"psw\" required>\r\n  \r\n        <label><b>Repita la clave</b></label>\r\n        <input type=\"password\" placeholder=\"Aca repeti la misa clave  de arriba\" name=\"psw-repeat\" required>\r\n        <input type=\"checkbox\" checked=\"checked\">Recordar mis datos\r\n        <p>creando la cuenta aceptando los<a  onclick=\"document.getElementById('id01').style.display='none'\"  >Terminos y condiciones</a>.</p>\r\n  \r\n        <div class=\"clearfix\">\r\n          <button type=\"button\" onclick=\"document.getElementById('id01').style.display='none'\" class=\"cancelbtn\">Me arrepenti</button>\r\n          <button type=\"submit\" class=\"signupbtn\">Registrarme</button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  \r\n  <script>\r\n  // Get the modal\r\n  var modal = document.getElementById('id01');\r\n  \r\n  // When the user clicks anywhere outside of the modal, close it\r\n  window.onclick = function(event) {\r\n      if (event.target == modal) {\r\n          modal.style.display = \"none\";\r\n      }\r\n  }\r\n  </script>\r\n  \r\n  </body>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/componentes/snack-bar-template/snack-bar-template.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/componentes/snack-bar-template/snack-bar-template.component.html ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p id=\"error\">{{this.data.error}}</p>\n<button mat-raised-button\ncolor=\"primary\"\n(click)=\"snackBarRef.dismiss()\">{{ data.action }}</button>"
+
+/***/ }),
+
+/***/ "./src/app/Services/high-low.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/Services/high-low.service.ts ***!
+  \**********************************************/
+/*! exports provided: HighLowService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighLowService", function() { return HighLowService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./http.service */ "./src/app/Services/http.service.ts");
+
+
+
+var HighLowService = /** @class */ (function () {
+    function HighLowService(http) {
+        this.http = http;
+        this.url = 'https://deckofcardsapi.com/api/deck/';
+    }
+    HighLowService.prototype.shuffleDeck = function () {
+        var SHUFFLE_ENDPOINT = this.url + "new/shuffle/?deck_count=1";
+        return this.http.get(SHUFFLE_ENDPOINT).pipe(function (response) { return response; });
+    };
+    HighLowService.prototype.drawCard = function (deckId) {
+        var DRAW_ENDPOINT = "" + this.url + deckId + "/draw/?count=1";
+        return this.http.get(DRAW_ENDPOINT).pipe(function (response) { return response; });
+    };
+    HighLowService.ctorParameters = function () { return [
+        { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+    ]; };
+    HighLowService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], HighLowService);
+    return HighLowService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/http.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/Services/http.service.ts ***!
+  \******************************************/
+/*! exports provided: HttpService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpService", function() { return HttpService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
+
+
+
+
+var HttpService = /** @class */ (function () {
+    function HttpService(http) {
+        this.http = http;
+    }
+    HttpService.prototype.get = function (url) {
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retry"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err);
+        }));
+    };
+    HttpService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    HttpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], HttpService);
+    return HttpService;
+}());
+
+
 
 /***/ }),
 
@@ -336,7 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./componentes/adivina-el-numero/adivina-el-numero.component */ "./src/app/componentes/adivina-el-numero/adivina-el-numero.component.ts");
 /* harmony import */ var _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./componentes/listado-de-resultados/listado-de-resultados.component */ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.ts");
 /* harmony import */ var _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./componentes/login/login.component */ "./src/app/componentes/login/login.component.ts");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _servicios_mi_http_mi_http_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./servicios/mi-http/mi-http.service */ "./src/app/servicios/mi-http/mi-http.service.ts");
 /* harmony import */ var _servicios_paises_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./servicios/paises.service */ "./src/app/servicios/paises.service.ts");
 /* harmony import */ var _servicios_jugadores_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./servicios/jugadores.service */ "./src/app/servicios/jugadores.service.ts");
@@ -369,6 +479,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/esm5/checkbox.es5.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _componentes_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./componentes/inicio/inicio.component */ "./src/app/componentes/inicio/inicio.component.ts");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./componentes/snack-bar-template/snack-bar-template.component */ "./src/app/componentes/snack-bar-template/snack-bar-template.component.ts");
+/* harmony import */ var _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./componentes/hi-lo/hi-lo.component */ "./src/app/componentes/hi-lo/hi-lo.component.ts");
+/* harmony import */ var _Services_http_service__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./Services/http.service */ "./src/app/Services/http.service.ts");
+/* harmony import */ var _Services_high_low_service__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./Services/high-low.service */ "./src/app/Services/high-low.service.ts");
 
 
 
@@ -424,6 +541,22 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
 
 
 
+
+
+
+
+
+
+
+var firebaseConfig = {
+    apiKey: 'AIzaSyCZ63weJ7A3M02Bd_N_W-DYI8kBmrmJJcI',
+    authDomain: 'labo-iv.firebaseapp.com',
+    databaseURL: 'https://labo-iv.firebaseio.com',
+    projectId: 'labo-iv',
+    storageBucket: '',
+    messagingSenderId: '243523402378',
+    appId: '1:243523402378:web:1129cdffcbbf271ad18b73'
+};
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -454,19 +587,28 @@ var AppModule = /** @class */ (function () {
                 _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_33__["InputJugadoresComponent"],
                 _pipes_sexo_pipe__WEBPACK_IMPORTED_MODULE_34__["SexoPipe"],
                 _pipes_sanitizer_pipe__WEBPACK_IMPORTED_MODULE_35__["SanitizerPipe"],
-                _componentes_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_40__["InicioComponent"]
+                _componentes_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_40__["InicioComponent"],
+                _componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__["SnackBarTemplateComponent"],
+                _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_45__["HiLoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _ruteando_ruteando_module__WEBPACK_IMPORTED_MODULE_19__["RuteandoModule"],
-                _angular_http__WEBPACK_IMPORTED_MODULE_8__["HttpModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_36__["BrowserAnimationsModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_37__["MatButtonModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatInputModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatFormFieldModule"],
                 _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_38__["MatCheckboxModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_41__["AngularFireModule"].initializeApp(firebaseConfig),
+                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_43__["AngularFireAuthModule"],
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_42__["AngularFirestoreModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatSnackBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatProgressBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatProgressSpinnerModule"],
                 _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"].forRoot({
                     apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
                 })
@@ -474,13 +616,45 @@ var AppModule = /** @class */ (function () {
                 // importo el ruteo
                 // RouterModule.forRoot(MiRuteo)
             ],
-            providers: [_servicios_juego_service_service__WEBPACK_IMPORTED_MODULE_22__["JuegoServiceService"], _servicios_mi_http_mi_http_service__WEBPACK_IMPORTED_MODULE_9__["MiHttpService"], _servicios_paises_service__WEBPACK_IMPORTED_MODULE_10__["PaisesService"], _servicios_archivos_jugadores_service__WEBPACK_IMPORTED_MODULE_12__["ArchivosJugadoresService"], _servicios_jugadores_service__WEBPACK_IMPORTED_MODULE_11__["JugadoresService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            providers: [_servicios_juego_service_service__WEBPACK_IMPORTED_MODULE_22__["JuegoServiceService"], _servicios_mi_http_mi_http_service__WEBPACK_IMPORTED_MODULE_9__["MiHttpService"], _servicios_paises_service__WEBPACK_IMPORTED_MODULE_10__["PaisesService"], _servicios_archivos_jugadores_service__WEBPACK_IMPORTED_MODULE_12__["ArchivosJugadoresService"], _servicios_jugadores_service__WEBPACK_IMPORTED_MODULE_11__["JugadoresService"], _Services_http_service__WEBPACK_IMPORTED_MODULE_46__["HttpService"], _Services_high_low_service__WEBPACK_IMPORTED_MODULE_47__["HighLowService"],
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_39__["MAT_SNACK_BAR_DEFAULT_OPTIONS"], useValue: { duration: 2500, action: 'Cerrar' } }],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+            entryComponents: [_componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__["SnackBarTemplateComponent"]]
         })
     ], AppModule);
     return AppModule;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/clases/cards-enum.ts":
+/*!**************************************!*\
+  !*** ./src/app/clases/cards-enum.ts ***!
+  \**************************************/
+/*! exports provided: CardsEnum */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardsEnum", function() { return CardsEnum; });
+var CardsEnum;
+(function (CardsEnum) {
+    CardsEnum[CardsEnum["KING"] = 13] = "KING";
+    CardsEnum[CardsEnum["QUEEN"] = 12] = "QUEEN";
+    CardsEnum[CardsEnum["JACK"] = 11] = "JACK";
+    CardsEnum[CardsEnum["TEN"] = 10] = "TEN";
+    CardsEnum[CardsEnum["NINE"] = 9] = "NINE";
+    CardsEnum[CardsEnum["EIGHT"] = 8] = "EIGHT";
+    CardsEnum[CardsEnum["SEVEN"] = 7] = "SEVEN";
+    CardsEnum[CardsEnum["SIX"] = 6] = "SIX";
+    CardsEnum[CardsEnum["FIVE"] = 5] = "FIVE";
+    CardsEnum[CardsEnum["FOUR"] = 4] = "FOUR";
+    CardsEnum[CardsEnum["THREE"] = 3] = "THREE";
+    CardsEnum[CardsEnum["TWO"] = 2] = "TWO";
+    CardsEnum[CardsEnum["ACE"] = 1] = "ACE";
+})(CardsEnum || (CardsEnum = {}));
 
 
 /***/ }),
@@ -1016,6 +1190,211 @@ var ErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/componentes/hi-lo/hi-lo.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/componentes/hi-lo/hi-lo.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#container {\r\n    border: .1rem solid black;\r\n    margin: 1% 2%;\r\n    margin: auto;\r\n    background-color: var(--tertiary-color-step-400);\r\n}\r\n\r\n.padding-top {\r\n    padding-top: 1%;\r\n    background-color: var(--background-color);\r\n}\r\n\r\n#card-container {\r\n    background-color: transparent;\r\n    width: 50%;\r\n    margin-top: 2%;\r\n    margin-bottom: 2%;\r\n}\r\n\r\n.cards {\r\n    width: initial;\r\n    height: initial;\r\n    margin-left: 1%;\r\n}\r\n\r\n#jugar {\r\n    background-color: var(--secondary-color-step-900);\r\n    width: 100%;\r\n    margin-bottom: 2%;\r\n}\r\n\r\n#buttons {\r\n    position: absolute;\r\n    top: 30%;\r\n    left: 57%;\r\n    width: 20%;\r\n}\r\n\r\n#higher {\r\n    margin-bottom: 10%;\r\n    background-color: rgb(11, 209, 11);\r\n}\r\n\r\n#lower {\r\n    background-color: red;\r\n}\r\n\r\n#spinner {\r\n    position: absolute;\r\n    top: 19%;\r\n    left: 60%;\r\n    display: -webkit-box;\r\n    display: flex;\r\n}\r\n\r\n#timer\r\n{\r\n    position: absolute;\r\n    top: 22%;\r\n    left: 62.5%;\r\n    display: -webkit-box;\r\n    display: flex;\r\n}\r\n\r\n.cardText {\r\n    margin-top: 2%;\r\n    width: 226px;\r\n}\r\n\r\n#puntuacion {\r\n    position: fixed;\r\n    display: block;\r\n    border: .1rem solid black;\r\n    top: 15%;\r\n    right: 22.5%;\r\n    padding: 1rem 2rem;\r\n}\r\n\r\n.icons\r\n{\r\n    position: absolute;\r\n    left: 25%;\r\n    font-size: 7rem;\r\n}\r\n\r\n#success\r\n{\r\n    color: rgb(11, 209, 11);\r\n}\r\n\r\n#failure\r\n{\r\n    color: red;\r\n}\r\n\r\n.gameOver\r\n{\r\n    font-size: 3rem;\r\n}\r\n\r\n.gameOverButtons\r\n{\r\n    margin-bottom: 2%;\r\n    width: 50%;\r\n    background-color: var(--tertiary-color-step-400);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvaGktbG8vaGktbG8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixhQUFhO0lBQ2IsWUFBWTtJQUNaLGdEQUFnRDtBQUNwRDs7QUFFQTtJQUNJLGVBQWU7SUFDZix5Q0FBeUM7QUFDN0M7O0FBRUE7SUFDSSw2QkFBNkI7SUFDN0IsVUFBVTtJQUNWLGNBQWM7SUFDZCxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxpREFBaUQ7SUFDakQsV0FBVztJQUNYLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsU0FBUztJQUNULFVBQVU7QUFDZDs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixrQ0FBa0M7QUFDdEM7O0FBRUE7SUFDSSxxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLFNBQVM7SUFDVCxvQkFBYTtJQUFiLGFBQWE7QUFDakI7O0FBRUE7O0lBRUksa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixXQUFXO0lBQ1gsb0JBQWE7SUFBYixhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksY0FBYztJQUNkLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsY0FBYztJQUNkLHlCQUF5QjtJQUN6QixRQUFRO0lBQ1IsWUFBWTtJQUNaLGtCQUFrQjtBQUN0Qjs7QUFFQTs7SUFFSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULGVBQWU7QUFDbkI7O0FBRUE7O0lBRUksdUJBQXVCO0FBQzNCOztBQUVBOztJQUVJLFVBQVU7QUFDZDs7QUFFQTs7SUFFSSxlQUFlO0FBQ25COztBQUVBOztJQUVJLGlCQUFpQjtJQUNqQixVQUFVO0lBQ1YsZ0RBQWdEO0FBQ3BEIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvaGktbG8vaGktbG8uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjb250YWluZXIge1xyXG4gICAgYm9yZGVyOiAuMXJlbSBzb2xpZCBibGFjaztcclxuICAgIG1hcmdpbjogMSUgMiU7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS10ZXJ0aWFyeS1jb2xvci1zdGVwLTQwMCk7XHJcbn1cclxuXHJcbi5wYWRkaW5nLXRvcCB7XHJcbiAgICBwYWRkaW5nLXRvcDogMSU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yKTtcclxufVxyXG5cclxuI2NhcmQtY29udGFpbmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIG1hcmdpbi10b3A6IDIlO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMiU7XHJcbn1cclxuXHJcbi5jYXJkcyB7XHJcbiAgICB3aWR0aDogaW5pdGlhbDtcclxuICAgIGhlaWdodDogaW5pdGlhbDtcclxuICAgIG1hcmdpbi1sZWZ0OiAxJTtcclxufVxyXG5cclxuI2p1Z2FyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1hcmdpbi1ib3R0b206IDIlO1xyXG59XHJcblxyXG4jYnV0dG9ucyB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDMwJTtcclxuICAgIGxlZnQ6IDU3JTtcclxuICAgIHdpZHRoOiAyMCU7XHJcbn1cclxuXHJcbiNoaWdoZXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDExLCAyMDksIDExKTtcclxufVxyXG5cclxuI2xvd2VyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxufVxyXG5cclxuI3NwaW5uZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAxOSU7XHJcbiAgICBsZWZ0OiA2MCU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4jdGltZXJcclxue1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAyMiU7XHJcbiAgICBsZWZ0OiA2Mi41JTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5jYXJkVGV4dCB7XHJcbiAgICBtYXJnaW4tdG9wOiAyJTtcclxuICAgIHdpZHRoOiAyMjZweDtcclxufVxyXG5cclxuI3B1bnR1YWNpb24ge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBib3JkZXI6IC4xcmVtIHNvbGlkIGJsYWNrO1xyXG4gICAgdG9wOiAxNSU7XHJcbiAgICByaWdodDogMjIuNSU7XHJcbiAgICBwYWRkaW5nOiAxcmVtIDJyZW07XHJcbn1cclxuXHJcbi5pY29uc1xyXG57XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBsZWZ0OiAyNSU7XHJcbiAgICBmb250LXNpemU6IDdyZW07XHJcbn1cclxuXHJcbiNzdWNjZXNzXHJcbntcclxuICAgIGNvbG9yOiByZ2IoMTEsIDIwOSwgMTEpO1xyXG59XHJcblxyXG4jZmFpbHVyZVxyXG57XHJcbiAgICBjb2xvcjogcmVkO1xyXG59XHJcblxyXG4uZ2FtZU92ZXJcclxue1xyXG4gICAgZm9udC1zaXplOiAzcmVtO1xyXG59XHJcblxyXG4uZ2FtZU92ZXJCdXR0b25zXHJcbntcclxuICAgIG1hcmdpbi1ib3R0b206IDIlO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRlcnRpYXJ5LWNvbG9yLXN0ZXAtNDAwKTtcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/componentes/hi-lo/hi-lo.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/componentes/hi-lo/hi-lo.component.ts ***!
+  \******************************************************/
+/*! exports provided: HiLoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HiLoComponent", function() { return HiLoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _Services_high_low_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Services/high-low.service */ "./src/app/Services/high-low.service.ts");
+/* harmony import */ var _clases_cards_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../clases/cards-enum */ "./src/app/clases/cards-enum.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+var HiLoComponent = /** @class */ (function () {
+    function HiLoComponent(hiloService, router) {
+        this.hiloService = hiloService;
+        this.router = router;
+        this.backCard = '../../../assets/imagenes/card-back.png';
+        this.currentCard = { img: this.backCard, value: -1 };
+        this.previousCard = { img: this.backCard, value: -1 };
+        this.cardChosen = false;
+        this.currentToPrevious = false;
+        this.hiloButtonsEnabled = false;
+        this.playing = false;
+        this.puntuacion = 0;
+        this.turns = 0;
+        this.fail = false;
+        this.success = false;
+        this.exitResult = false;
+        this.hideCurrent = false;
+        this.gameFinished = false;
+        this.destroyComponent = false;
+        this.storageEmpty = true;
+    }
+    HiLoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.hiloService.shuffleDeck().subscribe(function (response) {
+            _this.deckId = response.deck_id;
+        });
+        this.storageEmpty = (localStorage.getItem('hi-lo-score') === null);
+    };
+    HiLoComponent.prototype.drawCard = function (obj) {
+        this.hiloService.drawCard(this.deckId).subscribe(function (response) {
+            obj.img = response.cards[0].image;
+            if (isNaN(parseInt(response.cards[0].value, 10))) {
+                console.log(response.cards[0].value, _clases_cards_enum__WEBPACK_IMPORTED_MODULE_3__["CardsEnum"]["" + response.cards[0].value]);
+                obj.value = _clases_cards_enum__WEBPACK_IMPORTED_MODULE_3__["CardsEnum"]["" + response.cards[0].value];
+            }
+            else {
+                obj.value = parseInt(response.cards[0].value, 10);
+            }
+            console.log(obj);
+        });
+    };
+    HiLoComponent.prototype.jugar = function () {
+        var _this = this;
+        this.playing = true;
+        this.currentToPrevious = true;
+        this.drawCard(this.previousCard);
+        this.hiloButtonsEnabled = true;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(1000).subscribe(function () { _this.currentToPrevious = false; });
+    };
+    HiLoComponent.prototype.decideCard = function (hilo) {
+        var _this = this;
+        this.hiloButtonsEnabled = false;
+        this.turns += 1;
+        this.drawCard(this.currentCard);
+        this.cardChosen = true;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(3000).subscribe(function () {
+            _this.cardChosen = false;
+            console.log(_this.previousCard.value, _this.currentCard.value, _this.currentCard.value > _this.previousCard.value);
+            switch (hilo) {
+                case 'higher':
+                    if (_this.currentCard.value > _this.previousCard.value) {
+                        _this.successResult();
+                    }
+                    else {
+                        _this.failureResult();
+                    }
+                    break;
+                case 'lower':
+                    if (_this.currentCard.value < _this.previousCard.value) {
+                        _this.successResult();
+                    }
+                    else {
+                        _this.failureResult();
+                    }
+                    break;
+            }
+            if (_this.turns === 10) {
+                _this.saveScore();
+                _this.gameFinished = true;
+                Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(1000).subscribe(function () {
+                    _this.destroyComponent = true;
+                });
+            }
+            _this.hiloButtonsEnabled = true;
+        });
+    };
+    HiLoComponent.prototype.saveScore = function () {
+        if (localStorage.getItem('hi-lo-score') === null) {
+            localStorage.setItem('hi-lo-score', JSON.stringify([{
+                    usuario: JSON.parse(localStorage.getItem('uname')),
+                    fecha: Date(),
+                    puntuacion: this.puntuacion + "/10"
+                }]));
+        }
+        else {
+            var existingArray = JSON.parse(localStorage.getItem('hi-lo-score'));
+            console.log(existingArray);
+            existingArray.push({
+                usuario: JSON.parse(localStorage.getItem('uname')),
+                fecha: Date(),
+                puntuacion: this.puntuacion + "/10"
+            });
+            console.log(existingArray);
+            localStorage.removeItem('hi-lo-score');
+            localStorage.setItem('hi-lo-score', JSON.stringify(existingArray));
+        }
+    };
+    HiLoComponent.prototype.failureResult = function () {
+        var _this = this;
+        this.fail = true;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(3000).subscribe(function () {
+            _this.exitResult = true;
+            _this.swapCards();
+        });
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(4000).subscribe(function () {
+            _this.exitResult = false;
+            _this.fail = false;
+        });
+    };
+    HiLoComponent.prototype.successResult = function () {
+        var _this = this;
+        this.puntuacion += 1;
+        this.success = true;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(3000).subscribe(function () {
+            _this.exitResult = true;
+            _this.swapCards();
+        });
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(4000).subscribe(function () {
+            _this.exitResult = false;
+            _this.success = false;
+        });
+    };
+    HiLoComponent.prototype.swapCards = function () {
+        var _this = this;
+        this.hideCurrent = true;
+        this.currentToPrevious = true;
+        this.previousCard.img = this.currentCard.img;
+        this.previousCard.value = this.currentCard.value;
+        this.currentCard.img = this.backCard;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(1000).subscribe(function () {
+            _this.hideCurrent = false;
+            _this.cardChosen = true;
+        });
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(5000).subscribe(function () {
+            _this.cardChosen = false;
+            _this.currentToPrevious = false;
+        });
+    };
+    HiLoComponent.prototype.again = function () {
+        window.location.reload();
+    };
+    HiLoComponent.prototype.principal = function () {
+        this.router.navigate(['/Principal']);
+    };
+    HiLoComponent.ctorParameters = function () { return [
+        { type: _Services_high_low_service__WEBPACK_IMPORTED_MODULE_2__["HighLowService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    ]; };
+    HiLoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-hi-lo',
+            template: __webpack_require__(/*! raw-loader!./hi-lo.component.html */ "./node_modules/raw-loader/index.js!./src/app/componentes/hi-lo/hi-lo.component.html"),
+            styles: [__webpack_require__(/*! ./hi-lo.component.css */ "./src/app/componentes/hi-lo/hi-lo.component.css")]
+        })
+    ], HiLoComponent);
+    return HiLoComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/componentes/inicio/inicio.component.css":
 /*!*********************************************************!*\
   !*** ./src/app/componentes/inicio/inicio.component.css ***!
@@ -1023,7 +1402,7 @@ var ErrorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "body, html\r\n{\r\n    height: 100%;\r\n}\r\n\r\n*\r\n{\r\n    box-sizing: border-box;\r\n}\r\n\r\n.top\r\n{\r\n    text-align: center;\r\n    top: 40%;\r\n    left: 25%;\r\n    right: 25%;\r\n    position: absolute;\r\n    z-index: 2;\r\n    color: var(--tertiary-color);\r\n}\r\n\r\n.top>h1\r\n{\r\n    font-size: 40pt;\r\n\r\n}\r\n\r\n.top>a>button\r\n{\r\n    background-color: var(--secondary-color-step-800);\r\n    padding-left: 10%;\r\n    padding-right: 10%;\r\n}\r\n\r\n#imgBlurred\r\n{\r\n    background-image: url('cabecera.jpg');\r\n    height: 100vh;\r\n    filter: blur(8px);\r\n    -webkit-filter: blur(8px);\r\n\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.slide-in-blurred-top {\r\n\t-webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;\r\n\t        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;\r\n}\r\n\r\n@-webkit-keyframes slide-in-blurred-top {\r\n    0% {\r\n      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      -webkit-filter: blur(40px);\r\n              filter: blur(40px);\r\n      opacity: 0;\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(0) scaleY(1) scaleX(1);\r\n              transform: translateY(0) scaleY(1) scaleX(1);\r\n      -webkit-transform-origin: 50% 50%;\r\n              transform-origin: 50% 50%;\r\n      -webkit-filter: blur(0);\r\n              filter: blur(0);\r\n      opacity: 1;\r\n    }\r\n  }\r\n\r\n@keyframes slide-in-blurred-top {\r\n    0% {\r\n      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      -webkit-filter: blur(40px);\r\n              filter: blur(40px);\r\n      opacity: 0;\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(0) scaleY(1) scaleX(1);\r\n              transform: translateY(0) scaleY(1) scaleX(1);\r\n      -webkit-transform-origin: 50% 50%;\r\n              transform-origin: 50% 50%;\r\n      -webkit-filter: blur(0);\r\n              filter: blur(0);\r\n      opacity: 1;\r\n    }\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvaW5pY2lvL2luaWNpby5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLFlBQVk7QUFDaEI7O0FBRUE7O0lBRUksc0JBQXNCO0FBQzFCOztBQUVBOztJQUVJLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsU0FBUztJQUNULFVBQVU7SUFDVixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLDRCQUE0QjtBQUNoQzs7QUFFQTs7SUFFSSxlQUFlOztBQUVuQjs7QUFFQTs7SUFFSSxpREFBaUQ7SUFDakQsaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTs7SUFFSSxxQ0FBOEQ7SUFDOUQsYUFBYTtJQUNiLGlCQUFpQjtJQUNqQix5QkFBeUI7O0lBRXpCLDJCQUEyQjtJQUMzQiw0QkFBNEI7SUFDNUIsc0JBQXNCO0FBQzFCOztBQUVBO0NBQ0Msd0ZBQWdGO1NBQWhGLGdGQUFnRjtBQUNqRjs7QUFFQztJQUNHO01BQ0UsOERBQXNEO2NBQXRELHNEQUFzRDtNQUN0RCxnQ0FBd0I7Y0FBeEIsd0JBQXdCO01BQ3hCLDBCQUFrQjtjQUFsQixrQkFBa0I7TUFDbEIsVUFBVTtJQUNaO0lBQ0E7TUFDRSxvREFBNEM7Y0FBNUMsNENBQTRDO01BQzVDLGlDQUF5QjtjQUF6Qix5QkFBeUI7TUFDekIsdUJBQWU7Y0FBZixlQUFlO01BQ2YsVUFBVTtJQUNaO0VBQ0Y7O0FBYkQ7SUFDRztNQUNFLDhEQUFzRDtjQUF0RCxzREFBc0Q7TUFDdEQsZ0NBQXdCO2NBQXhCLHdCQUF3QjtNQUN4QiwwQkFBa0I7Y0FBbEIsa0JBQWtCO01BQ2xCLFVBQVU7SUFDWjtJQUNBO01BQ0Usb0RBQTRDO2NBQTVDLDRDQUE0QztNQUM1QyxpQ0FBeUI7Y0FBekIseUJBQXlCO01BQ3pCLHVCQUFlO2NBQWYsZUFBZTtNQUNmLFVBQVU7SUFDWjtFQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvaW5pY2lvL2luaWNpby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSwgaHRtbFxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbipcclxue1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuLnRvcFxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB0b3A6IDQwJTtcclxuICAgIGxlZnQ6IDI1JTtcclxuICAgIHJpZ2h0OiAyNSU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB6LWluZGV4OiAyO1xyXG4gICAgY29sb3I6IHZhcigtLXRlcnRpYXJ5LWNvbG9yKTtcclxufVxyXG5cclxuLnRvcD5oMVxyXG57XHJcbiAgICBmb250LXNpemU6IDQwcHQ7XHJcblxyXG59XHJcblxyXG4udG9wPmE+YnV0dG9uXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTgwMCk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG5cclxuI2ltZ0JsdXJyZWRcclxue1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi8uLi9hc3NldHMvaW1hZ2VuZXMvY2FiZWNlcmEuanBnJyk7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgZmlsdGVyOiBibHVyKDhweCk7XHJcbiAgICAtd2Via2l0LWZpbHRlcjogYmx1cig4cHgpO1xyXG5cclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG59XHJcblxyXG4uc2xpZGUtaW4tYmx1cnJlZC10b3Age1xyXG5cdGFuaW1hdGlvbjogc2xpZGUtaW4tYmx1cnJlZC10b3AgMXMgY3ViaWMtYmV6aWVyKDAuMjMwLCAxLjAwMCwgMC4zMjAsIDEuMDAwKSBib3RoO1xyXG59XHJcblxyXG4gQGtleWZyYW1lcyBzbGlkZS1pbi1ibHVycmVkLXRvcCB7XHJcbiAgICAwJSB7XHJcbiAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMTAwMHB4KSBzY2FsZVkoMi41KSBzY2FsZVgoMC4yKTtcclxuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICBmaWx0ZXI6IGJsdXIoNDBweCk7XHJcbiAgICAgIG9wYWNpdHk6IDA7XHJcbiAgICB9XHJcbiAgICAxMDAlIHtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDApIHNjYWxlWSgxKSBzY2FsZVgoMSk7XHJcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSA1MCU7XHJcbiAgICAgIGZpbHRlcjogYmx1cigwKTtcclxuICAgICAgb3BhY2l0eTogMTtcclxuICAgIH1cclxuICB9XHJcbiAgIl19 */"
+module.exports = "body, html\r\n{\r\n    height: 100%;\r\n}\r\n\r\n*\r\n{\r\n    box-sizing: border-box;\r\n}\r\n\r\n.top\r\n{\r\n    text-align: center;\r\n    top: 40%;\r\n    left: 25%;\r\n    right: 25%;\r\n    position: absolute;\r\n    z-index: 2;\r\n    color: var(--tertiary-color);\r\n}\r\n\r\n.top>h1\r\n{\r\n    font-size: 40pt;\r\n\r\n}\r\n\r\n.top>a>button\r\n{\r\n    background-color: var(--secondary-color-step-800);\r\n    padding-left: 10%;\r\n    padding-right: 10%;\r\n}\r\n\r\n#imgBlurred\r\n{\r\n    background-image: url('cabecera.jpg');\r\n    height: 100vh;\r\n    filter: blur(10px);\r\n    -webkit-filter: blur(10px);\r\n\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.slide-in-blurred-top {\r\n\t-webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;\r\n\t        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;\r\n}\r\n\r\n@-webkit-keyframes slide-in-blurred-top {\r\n    0% {\r\n      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      -webkit-filter: blur(40px);\r\n              filter: blur(40px);\r\n      opacity: 0;\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(0) scaleY(1) scaleX(1);\r\n              transform: translateY(0) scaleY(1) scaleX(1);\r\n      -webkit-transform-origin: 50% 50%;\r\n              transform-origin: 50% 50%;\r\n      -webkit-filter: blur(0);\r\n              filter: blur(0);\r\n      opacity: 1;\r\n    }\r\n  }\r\n\r\n@keyframes slide-in-blurred-top {\r\n    0% {\r\n      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      -webkit-filter: blur(40px);\r\n              filter: blur(40px);\r\n      opacity: 0;\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(0) scaleY(1) scaleX(1);\r\n              transform: translateY(0) scaleY(1) scaleX(1);\r\n      -webkit-transform-origin: 50% 50%;\r\n              transform-origin: 50% 50%;\r\n      -webkit-filter: blur(0);\r\n              filter: blur(0);\r\n      opacity: 1;\r\n    }\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvaW5pY2lvL2luaWNpby5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLFlBQVk7QUFDaEI7O0FBRUE7O0lBRUksc0JBQXNCO0FBQzFCOztBQUVBOztJQUVJLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsU0FBUztJQUNULFVBQVU7SUFDVixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLDRCQUE0QjtBQUNoQzs7QUFFQTs7SUFFSSxlQUFlOztBQUVuQjs7QUFFQTs7SUFFSSxpREFBaUQ7SUFDakQsaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTs7SUFFSSxxQ0FBOEQ7SUFDOUQsYUFBYTtJQUNiLGtCQUFrQjtJQUNsQiwwQkFBMEI7O0lBRTFCLDJCQUEyQjtJQUMzQiw0QkFBNEI7SUFDNUIsc0JBQXNCO0FBQzFCOztBQUVBO0NBQ0Msd0ZBQWdGO1NBQWhGLGdGQUFnRjtBQUNqRjs7QUFFQztJQUNHO01BQ0UsOERBQXNEO2NBQXRELHNEQUFzRDtNQUN0RCxnQ0FBd0I7Y0FBeEIsd0JBQXdCO01BQ3hCLDBCQUFrQjtjQUFsQixrQkFBa0I7TUFDbEIsVUFBVTtJQUNaO0lBQ0E7TUFDRSxvREFBNEM7Y0FBNUMsNENBQTRDO01BQzVDLGlDQUF5QjtjQUF6Qix5QkFBeUI7TUFDekIsdUJBQWU7Y0FBZixlQUFlO01BQ2YsVUFBVTtJQUNaO0VBQ0Y7O0FBYkQ7SUFDRztNQUNFLDhEQUFzRDtjQUF0RCxzREFBc0Q7TUFDdEQsZ0NBQXdCO2NBQXhCLHdCQUF3QjtNQUN4QiwwQkFBa0I7Y0FBbEIsa0JBQWtCO01BQ2xCLFVBQVU7SUFDWjtJQUNBO01BQ0Usb0RBQTRDO2NBQTVDLDRDQUE0QztNQUM1QyxpQ0FBeUI7Y0FBekIseUJBQXlCO01BQ3pCLHVCQUFlO2NBQWYsZUFBZTtNQUNmLFVBQVU7SUFDWjtFQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvaW5pY2lvL2luaWNpby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSwgaHRtbFxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbipcclxue1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuLnRvcFxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB0b3A6IDQwJTtcclxuICAgIGxlZnQ6IDI1JTtcclxuICAgIHJpZ2h0OiAyNSU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB6LWluZGV4OiAyO1xyXG4gICAgY29sb3I6IHZhcigtLXRlcnRpYXJ5LWNvbG9yKTtcclxufVxyXG5cclxuLnRvcD5oMVxyXG57XHJcbiAgICBmb250LXNpemU6IDQwcHQ7XHJcblxyXG59XHJcblxyXG4udG9wPmE+YnV0dG9uXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTgwMCk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG5cclxuI2ltZ0JsdXJyZWRcclxue1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi8uLi9hc3NldHMvaW1hZ2VuZXMvY2FiZWNlcmEuanBnJyk7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgZmlsdGVyOiBibHVyKDEwcHgpO1xyXG4gICAgLXdlYmtpdC1maWx0ZXI6IGJsdXIoMTBweCk7XHJcblxyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbn1cclxuXHJcbi5zbGlkZS1pbi1ibHVycmVkLXRvcCB7XHJcblx0YW5pbWF0aW9uOiBzbGlkZS1pbi1ibHVycmVkLXRvcCAxcyBjdWJpYy1iZXppZXIoMC4yMzAsIDEuMDAwLCAwLjMyMCwgMS4wMDApIGJvdGg7XHJcbn1cclxuXHJcbiBAa2V5ZnJhbWVzIHNsaWRlLWluLWJsdXJyZWQtdG9wIHtcclxuICAgIDAlIHtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0xMDAwcHgpIHNjYWxlWSgyLjUpIHNjYWxlWCgwLjIpO1xyXG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgIGZpbHRlcjogYmx1cig0MHB4KTtcclxuICAgICAgb3BhY2l0eTogMDtcclxuICAgIH1cclxuICAgIDEwMCUge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCkgc2NhbGVZKDEpIHNjYWxlWCgxKTtcclxuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogNTAlIDUwJTtcclxuICAgICAgZmlsdGVyOiBibHVyKDApO1xyXG4gICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gIH1cclxuICAiXX0= */"
 
 /***/ }),
 
@@ -1345,7 +1724,7 @@ var ListadoDeResultadosComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* Style all font awesome icons */\r\n.fa {\r\n    padding: 20px;\r\n    font-size: 30px;\r\n    width: 50px;\r\n    text-align: center;\r\n    text-decoration: none;\r\n    border-radius: 50%;\r\n}\r\n/* Add a hover effect if you want */\r\n.fa:hover {\r\n    opacity: 0.7;\r\n}\r\n/* Set a specific color for each brand */\r\n/* Facebook */\r\n.fa-facebook {\r\n    background: #3B5998;\r\n    color: white;\r\n}\r\n/* Twitter */\r\n.fa-twitter {\r\n    background: #55ACEE;\r\n    color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbGlzdGFkby9saXN0YWRvLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsaUNBQWlDO0FBQ2pDO0lBQ0ksYUFBYTtJQUNiLGVBQWU7SUFDZixXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLHFCQUFxQjtJQUNyQixrQkFBa0I7QUFDdEI7QUFFQSxtQ0FBbUM7QUFDbkM7SUFDSSxZQUFZO0FBQ2hCO0FBRUEsd0NBQXdDO0FBRXhDLGFBQWE7QUFDYjtJQUNJLG1CQUFtQjtJQUNuQixZQUFZO0FBQ2hCO0FBRUEsWUFBWTtBQUNaO0lBQ0ksbUJBQW1CO0lBQ25CLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9saXN0YWRvL2xpc3RhZG8uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFN0eWxlIGFsbCBmb250IGF3ZXNvbWUgaWNvbnMgKi9cclxuLmZhIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICB3aWR0aDogNTBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG5cclxuLyogQWRkIGEgaG92ZXIgZWZmZWN0IGlmIHlvdSB3YW50ICovXHJcbi5mYTpob3ZlciB7XHJcbiAgICBvcGFjaXR5OiAwLjc7XHJcbn1cclxuXHJcbi8qIFNldCBhIHNwZWNpZmljIGNvbG9yIGZvciBlYWNoIGJyYW5kICovXHJcblxyXG4vKiBGYWNlYm9vayAqL1xyXG4uZmEtZmFjZWJvb2sge1xyXG4gICAgYmFja2dyb3VuZDogIzNCNTk5ODtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLyogVHdpdHRlciAqL1xyXG4uZmEtdHdpdHRlciB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjNTVBQ0VFO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59Il19 */"
+module.exports = "table{\r\n    left: 35%;\r\n    position: relative;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbGlzdGFkby9saXN0YWRvLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1Qsa0JBQWtCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvbGlzdGFkby9saXN0YWRvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZXtcclxuICAgIGxlZnQ6IDM1JTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1361,30 +1740,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListadoComponent", function() { return ListadoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _servicios_juego_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../servicios/juego-service.service */ "./src/app/servicios/juego-service.service.ts");
-
 
 
 var ListadoComponent = /** @class */ (function () {
-    function ListadoComponent(servicioJuego) {
-        this.miServicioJuego = servicioJuego;
+    function ListadoComponent() {
+        this.listado = JSON.parse(localStorage.getItem('hi-lo-score'));
     }
     ListadoComponent.prototype.ngOnInit = function () {
     };
-    ListadoComponent.prototype.llamaService = function () {
-        console.log("llamaService");
-        this.listadoParaCompartir = this.miServicioJuego.listar();
-    };
-    ListadoComponent.prototype.llamaServicePromesa = function () {
-        var _this = this;
-        console.log("llamaServicePromesa");
-        this.miServicioJuego.listarPromesa().then(function (listado) {
-            _this.listadoParaCompartir = listado;
-        });
-    };
-    ListadoComponent.ctorParameters = function () { return [
-        { type: _servicios_juego_service_service__WEBPACK_IMPORTED_MODULE_2__["JuegoServiceService"] }
-    ]; };
     ListadoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-listado',
@@ -1450,7 +1813,7 @@ var ListadosComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container-fluid\r\n{\r\n    height: 100vh;\r\n}\r\n\r\n#email, #clave\r\n{\r\n    width: 100%;\r\n}\r\n\r\nform\r\n{\r\n    background-color: #2962ff;\r\n    padding: 1rem;\r\n    margin-top: 1rem;\r\n    padding-bottom: 5rem;\r\n}\r\n\r\n#ingresar\r\n{\r\n    background-color: var(--secondary-color-step-400);\r\n    color: black;\r\n    padding: .3rem 0rem .6rem;\r\n    margin-bottom: 1rem;\r\n}\r\n\r\n#registerBtn\r\n{\r\n    position: relative;\r\n    float: right;\r\n}\r\n\r\n#register\r\n{\r\n    margin-top: 1rem;\r\n    margin-left: 0;\r\n    margin-right: 0;\r\n}\r\n\r\n#register>button\r\n{\r\n    margin-right: 1rem; \r\n}\r\n\r\nmat-label {\r\n    color: white;\r\n  }\r\n\r\nmat-checkbox\r\n{\r\n    color: white;\r\n}\r\n\r\nimg\r\n{\r\n    justify-self: center;\r\n    width: 25%;\r\n    margin-bottom: 1rem;\r\n    border: 0;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxhQUFhO0FBQ2pCOztBQUVBOztJQUVJLFdBQVc7QUFDZjs7QUFFQTs7SUFFSSx5QkFBeUI7SUFDekIsYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixvQkFBb0I7QUFDeEI7O0FBRUE7O0lBRUksaURBQWlEO0lBQ2pELFlBQVk7SUFDWix5QkFBeUI7SUFDekIsbUJBQW1CO0FBQ3ZCOztBQUVBOztJQUVJLGtCQUFrQjtJQUNsQixZQUFZO0FBQ2hCOztBQUVBOztJQUVJLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2QsZUFBZTtBQUNuQjs7QUFFQTs7SUFFSSxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxZQUFZO0VBQ2Q7O0FBRUY7O0lBRUksWUFBWTtBQUNoQjs7QUFFQTs7SUFFSSxvQkFBb0I7SUFDcEIsVUFBVTtJQUNWLG1CQUFtQjtJQUNuQixTQUFTO0FBQ2IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lci1mbHVpZFxyXG57XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG59XHJcblxyXG4jZW1haWwsICNjbGF2ZVxyXG57XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuZm9ybVxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjk2MmZmO1xyXG4gICAgcGFkZGluZzogMXJlbTtcclxuICAgIG1hcmdpbi10b3A6IDFyZW07XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogNXJlbTtcclxufVxyXG5cclxuI2luZ3Jlc2FyXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTQwMCk7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBwYWRkaW5nOiAuM3JlbSAwcmVtIC42cmVtO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMXJlbTtcclxufVxyXG5cclxuI3JlZ2lzdGVyQnRuXHJcbntcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxuI3JlZ2lzdGVyXHJcbntcclxuICAgIG1hcmdpbi10b3A6IDFyZW07XHJcbiAgICBtYXJnaW4tbGVmdDogMDtcclxuICAgIG1hcmdpbi1yaWdodDogMDtcclxufVxyXG5cclxuI3JlZ2lzdGVyPmJ1dHRvblxyXG57XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDFyZW07IFxyXG59XHJcblxyXG5tYXQtbGFiZWwge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gIH1cclxuXHJcbm1hdC1jaGVja2JveFxyXG57XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbmltZ1xyXG57XHJcbiAgICBqdXN0aWZ5LXNlbGY6IGNlbnRlcjtcclxuICAgIHdpZHRoOiAyNSU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxcmVtO1xyXG4gICAgYm9yZGVyOiAwO1xyXG59Il19 */"
+module.exports = ".container-fluid\r\n{\r\n    height: 100vh;\r\n}\r\n\r\n#email, #clave\r\n{\r\n    width: 100%;\r\n}\r\n\r\nform\r\n{\r\n    background-color: #2962ff;\r\n    padding: 1rem;\r\n    margin-top: 1rem;\r\n    padding-bottom: 5rem;\r\n}\r\n\r\n#ingresar\r\n{\r\n    background-color: var(--secondary-color-step-400);\r\n    color: black;\r\n    padding: .3rem 0rem .6rem;\r\n    margin-bottom: 1rem;\r\n}\r\n\r\n#registerBtn\r\n{\r\n    position: relative;\r\n    float: right;\r\n}\r\n\r\n#register\r\n{\r\n    margin-top: 1rem;\r\n    margin-left: 0;\r\n    margin-right: 0;\r\n}\r\n\r\n#register>button\r\n{\r\n    margin-right: 1rem; \r\n}\r\n\r\nmat-label {\r\n    color: white;\r\n  }\r\n\r\nmat-checkbox\r\n{\r\n    color: white;\r\n}\r\n\r\nimg\r\n{\r\n    justify-self: center;\r\n    width: 25%;\r\n    margin-bottom: 1rem;\r\n    border: 0;\r\n}\r\n\r\n#progressBar\r\n{\r\n    margin-bottom: 1%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxhQUFhO0FBQ2pCOztBQUVBOztJQUVJLFdBQVc7QUFDZjs7QUFFQTs7SUFFSSx5QkFBeUI7SUFDekIsYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixvQkFBb0I7QUFDeEI7O0FBRUE7O0lBRUksaURBQWlEO0lBQ2pELFlBQVk7SUFDWix5QkFBeUI7SUFDekIsbUJBQW1CO0FBQ3ZCOztBQUVBOztJQUVJLGtCQUFrQjtJQUNsQixZQUFZO0FBQ2hCOztBQUVBOztJQUVJLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2QsZUFBZTtBQUNuQjs7QUFFQTs7SUFFSSxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxZQUFZO0VBQ2Q7O0FBRUY7O0lBRUksWUFBWTtBQUNoQjs7QUFFQTs7SUFFSSxvQkFBb0I7SUFDcEIsVUFBVTtJQUNWLG1CQUFtQjtJQUNuQixTQUFTO0FBQ2I7O0FBRUE7O0lBRUksaUJBQWlCO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXItZmx1aWRcclxue1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxufVxyXG5cclxuI2VtYWlsLCAjY2xhdmVcclxue1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmZvcm1cclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI5NjJmZjtcclxuICAgIHBhZGRpbmc6IDFyZW07XHJcbiAgICBtYXJnaW4tdG9wOiAxcmVtO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDVyZW07XHJcbn1cclxuXHJcbiNpbmdyZXNhclxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnktY29sb3Itc3RlcC00MDApO1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgcGFkZGluZzogLjNyZW0gMHJlbSAuNnJlbTtcclxuICAgIG1hcmdpbi1ib3R0b206IDFyZW07XHJcbn1cclxuXHJcbiNyZWdpc3RlckJ0blxyXG57XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbn1cclxuXHJcbiNyZWdpc3RlclxyXG57XHJcbiAgICBtYXJnaW4tdG9wOiAxcmVtO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDA7XHJcbn1cclxuXHJcbiNyZWdpc3Rlcj5idXR0b25cclxue1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxcmVtOyBcclxufVxyXG5cclxubWF0LWxhYmVsIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICB9XHJcblxyXG5tYXQtY2hlY2tib3hcclxue1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5pbWdcclxue1xyXG4gICAganVzdGlmeS1zZWxmOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogMjUlO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMXJlbTtcclxuICAgIGJvcmRlcjogMDtcclxufVxyXG5cclxuI3Byb2dyZXNzQmFyXHJcbntcclxuICAgIG1hcmdpbi1ib3R0b206IDElO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -1467,83 +1830,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_observable_TimerObservable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/observable/TimerObservable */ "./node_modules/rxjs-compat/_esm5/observable/TimerObservable.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _servicios_firebase_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../servicios/firebase-auth.service */ "./src/app/servicios/firebase-auth.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../snack-bar-template/snack-bar-template.component */ "./src/app/componentes/snack-bar-template/snack-bar-template.component.ts");
+
+
 
 
 
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(route, router) {
+    function LoginComponent(authService, route, snackBar) {
+        this.authService = authService;
         this.route = route;
-        this.router = router;
+        this.snackBar = snackBar;
         // Manejo de form controls
-        this.emailFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email,
+        this.emailFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', [
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email,
         ]);
-        this.claveFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required
+        this.claveFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', [
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required
         ]);
-        this.usuario = '';
-        this.clave = '';
-        this.progresoMensaje = "esperando...";
-        this.logeando = true;
-        this.clase = "progress-bar progress-bar-info progress-bar-striped ";
-        this.progreso = 0;
-        this.ProgresoDeAncho = "0%";
+        this.type = 'text';
+        this.logingIn = false;
+        this.usuario = 'admin@admin.com';
+        this.clave = 'admin11';
+        this.showPass = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
-    LoginComponent.prototype.Entrar = function () {
-        if (this.usuario === 'admin' && this.clave === 'admin') {
-            this.router.navigate(['/Principal']);
+    LoginComponent.prototype.login = function () {
+        var _this = this;
+        this.logingIn = true;
+        this.authService.loginEmailUser(this.usuario, this.clave)
+            .then(function () {
+            setTimeout(function () {
+                localStorage.setItem('uname', JSON.stringify(_this.usuario));
+                _this.route.navigate(['/Principal']);
+            }, 1500);
+        }, function (err) {
+            console.log(err);
+            setTimeout(function () {
+                _this.logingIn = false;
+                _this.snackBar.openFromComponent(_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_6__["SnackBarTemplateComponent"], {
+                    data: {
+                        error: _this.validateLogin(err.code),
+                        action: 'Cerrar'
+                    }
+                });
+            }, 1500);
+        });
+    };
+    LoginComponent.prototype.validateLogin = function (errCode) {
+        switch (errCode) {
+            case 'auth/invalid-email':
+                return 'El mail ingresado no es valido';
+            case 'auth/user-not-found':
+                return 'El mail ingresado no corresponde a ningun usuario';
+            case 'auth/wrong-password':
+                return 'Contraseña incorrecta';
         }
     };
-    LoginComponent.prototype.MoverBarraDeProgreso = function () {
-        var _this = this;
-        this.logeando = false;
-        this.clase = "progress-bar progress-bar-danger progress-bar-striped active";
-        this.progresoMensaje = "NSA spy...";
-        var timer = rxjs_observable_TimerObservable__WEBPACK_IMPORTED_MODULE_3__["TimerObservable"].create(200, 50);
-        this.subscription = timer.subscribe(function (t) {
-            console.log("inicio");
-            _this.progreso = _this.progreso + 1;
-            _this.ProgresoDeAncho = _this.progreso + 20 + "%";
-            switch (_this.progreso) {
-                case 15:
-                    _this.clase = "progress-bar progress-bar-warning progress-bar-striped active";
-                    _this.progresoMensaje = "Verificando ADN...";
-                    break;
-                case 30:
-                    _this.clase = "progress-bar progress-bar-Info progress-bar-striped active";
-                    _this.progresoMensaje = "Adjustando encriptación..";
-                    break;
-                case 60:
-                    _this.clase = "progress-bar progress-bar-success progress-bar-striped active";
-                    _this.progresoMensaje = "Recompilando Info del dispositivo..";
-                    break;
-                case 75:
-                    _this.clase = "progress-bar progress-bar-success progress-bar-striped active";
-                    _this.progresoMensaje = "Recompilando claves facebook, gmail, chats..";
-                    break;
-                case 85:
-                    _this.clase = "progress-bar progress-bar-success progress-bar-striped active";
-                    _this.progresoMensaje = "Instalando KeyLogger..";
-                    break;
-                case 100:
-                    console.log("final");
-                    _this.subscription.unsubscribe();
-                    _this.Entrar();
-                    break;
-            }
-        });
-        //this.logeando=true;
-    };
     LoginComponent.ctorParameters = function () { return [
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+        { type: _servicios_firebase_auth_service__WEBPACK_IMPORTED_MODULE_4__["FirebaseAuthService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"] }
     ]; };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1642,24 +1996,26 @@ var MenuCardComponent = /** @class */ (function () {
         this.route = route;
         this.router = router;
         this.sanitizer = sanitizer;
-        this.cardContent = [{ link: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/cerebro.jpg')"),
-                title: 'Velocidad y agilidad aritmética', description: 'Juego de agilidad mental' },
-            { link: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/ppt.jpg')"),
-                title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina' },
-            { link: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/adivina.png')"),
-                title: 'Adivina el número secreto', description: 'Juega de estrategia' }];
+        this.cardContent = [{ img: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/cerebro.jpg')"),
+                title: 'Velocidad y agilidad aritmética', description: 'Juego de agilidad mental', link: '/Juegos/Agilidad' },
+            { img: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/ppt.jpg')"),
+                title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina', link: '/Juegos/PiedraPapelTijera' },
+            { img: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/adivina.png')"),
+                title: 'Adivina el número secreto', description: 'Juega de estrategia', link: '/Juegos/Adivina' },
+            { img: this.sanitizer.bypassSecurityTrustStyle("url('/assets/imagenes/hi-lo.png')"),
+                title: 'Hi-Lo', description: 'Adivina si la siguiente carta sera mayor o menor que la actual', link: '/Juegos/HiLo' }];
     }
     MenuCardComponent.prototype.sanitizeStlye = function (url) {
         return this.sanitizer.bypassSecurityTrustStyle("{bakcground-image:url(" + url + ")};");
     };
     MenuCardComponent.prototype.ngOnInit = function () {
     };
-    MenuCardComponent.prototype.Juego = function (tipo) {
+    MenuCardComponent.prototype.Jugar = function (tipo) {
         switch (tipo) {
-            case 'Adivina':
+            case 'Adivina el número secreto':
                 this.router.navigate(['/Juegos/Adivina']);
                 break;
-            case 'Agilidad':
+            case 'Velocidad y agilidad aritmética':
                 this.router.navigate(['/Juegos/Agilidad']);
                 break;
             case 'AdivinaMasListado':
@@ -1667,6 +2023,9 @@ var MenuCardComponent = /** @class */ (function () {
                 break;
             case 'AgilidadaMasListado':
                 this.router.navigate(['/Juegos/AgilidadaMasListado']);
+                break;
+            case 'Hi-Lo':
+                this.router.navigate(['/Juegos/HiLo']);
                 break;
         }
     };
@@ -1696,7 +2055,7 @@ var MenuCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#navBar\r\n{\r\n    background-color: var(--base-color);\r\n    margin: 0;\r\n    border: 0;\r\n    border-bottom: .1rem solid var(--secondary-color-step-900);\r\n}\r\n\r\n.navbar-toggler-icon\r\n{\r\n        background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E\");\r\n}\r\n\r\n.navbar-toggler\r\n{\r\n        border: .1rem solid var(--secondary-color-step-900);\r\n\r\n}\r\n\r\n.dropdown-menu\r\n{\r\n        background-color: var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown-menu>a:hover\r\n{\r\n        background-color: var(--tertiary-color-step-500);\r\n}\r\n\r\n.nav-link\r\n{\r\n    color: white;\r\n}\r\n\r\n.dropdown-item\r\n{\r\n    color:black;\r\n}\r\n\r\n.activeLink\r\n{\r\n    color: var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown:hover>.dropdown-menu\r\n{\r\n    display:block;\r\n}\r\n\r\n.scale-in-top {\r\n\t-webkit-animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n\t        animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n}\r\n\r\n@-webkit-keyframes scale-in-top {\r\n    0% {\r\n      -webkit-transform: scale(0);\r\n              transform: scale(0);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      -webkit-transform: scale(1);\r\n              transform: scale(1);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      opacity: 1;\r\n    }\r\n  }\r\n\r\n@keyframes scale-in-top {\r\n    0% {\r\n      -webkit-transform: scale(0);\r\n              transform: scale(0);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      -webkit-transform: scale(1);\r\n              transform: scale(1);\r\n      -webkit-transform-origin: 50% 0%;\r\n              transform-origin: 50% 0%;\r\n      opacity: 1;\r\n    }\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0lBRUksbUNBQW1DO0lBQ25DLFNBQVM7SUFDVCxTQUFTO0lBQ1QsMERBQTBEO0FBQzlEOztBQUVBOztRQUVRLHlRQUF5UTtBQUNqUjs7QUFDQTs7UUFFUSxtREFBbUQ7O0FBRTNEOztBQUVBOztRQUVRLGlEQUFpRDtBQUN6RDs7QUFFQTs7UUFFUSxnREFBZ0Q7QUFDeEQ7O0FBRUE7O0lBRUksWUFBWTtBQUNoQjs7QUFFQTs7SUFFSSxXQUFXO0FBQ2Y7O0FBRUE7O0lBRUksc0NBQXNDO0FBQzFDOztBQUVBOztJQUVJLGFBQWE7QUFDakI7O0FBRUE7Q0FDQyxrRkFBa0Y7U0FDMUUsMEVBQTBFO0FBQ25GOztBQUNDO0lBQ0c7TUFDRSwyQkFBMkI7Y0FDbkIsbUJBQW1CO01BQzNCLGdDQUFnQztjQUN4Qix3QkFBd0I7TUFDaEMsVUFBVTtJQUNaO0lBQ0E7TUFDRSwyQkFBMkI7Y0FDbkIsbUJBQW1CO01BQzNCLGdDQUFnQztjQUN4Qix3QkFBd0I7TUFDaEMsVUFBVTtJQUNaO0VBQ0Y7O0FBQ0E7SUFDRTtNQUNFLDJCQUEyQjtjQUNuQixtQkFBbUI7TUFDM0IsZ0NBQWdDO2NBQ3hCLHdCQUF3QjtNQUNoQyxVQUFVO0lBQ1o7SUFDQTtNQUNFLDJCQUEyQjtjQUNuQixtQkFBbUI7TUFDM0IsZ0NBQWdDO2NBQ3hCLHdCQUF3QjtNQUNoQyxVQUFVO0lBQ1o7RUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL21lbnUvbWVudS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI25hdkJhclxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYXNlLWNvbG9yKTtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIGJvcmRlci1ib3R0b206IC4xcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi5uYXZiYXItdG9nZ2xlci1pY29uXHJcbntcclxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7Y2hhcnNldD11dGY4LCUzQ3N2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyclM0UlM0NwYXRoIHN0cm9rZT0ncmdiYSgyNTUsMTAyLDIwMywgMC43KScgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1taXRlcmxpbWl0PScxMCcgZD0nTTQgOGgyNE00IDE2aDI0TTQgMjRoMjQnLyUzRSUzQy9zdmclM0VcIik7XHJcbn1cclxuLm5hdmJhci10b2dnbGVyXHJcbntcclxuICAgICAgICBib3JkZXI6IC4xcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcblxyXG59XHJcblxyXG4uZHJvcGRvd24tbWVudVxyXG57XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5LWNvbG9yLXN0ZXAtOTAwKTtcclxufVxyXG5cclxuLmRyb3Bkb3duLW1lbnU+YTpob3ZlclxyXG57XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tdGVydGlhcnktY29sb3Itc3RlcC01MDApO1xyXG59XHJcblxyXG4ubmF2LWxpbmtcclxue1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uZHJvcGRvd24taXRlbVxyXG57XHJcbiAgICBjb2xvcjpibGFjaztcclxufVxyXG5cclxuLmFjdGl2ZUxpbmtcclxue1xyXG4gICAgY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi5kcm9wZG93bjpob3Zlcj4uZHJvcGRvd24tbWVudVxyXG57XHJcbiAgICBkaXNwbGF5OmJsb2NrO1xyXG59XHJcblxyXG4uc2NhbGUtaW4tdG9wIHtcclxuXHQtd2Via2l0LWFuaW1hdGlvbjogc2NhbGUtaW4tdG9wIDAuMnMgY3ViaWMtYmV6aWVyKDAuMjUwLCAwLjQ2MCwgMC40NTAsIDAuOTQwKSBib3RoO1xyXG5cdCAgICAgICAgYW5pbWF0aW9uOiBzY2FsZS1pbi10b3AgMC4ycyBjdWJpYy1iZXppZXIoMC4yNTAsIDAuNDYwLCAwLjQ1MCwgMC45NDApIGJvdGg7XHJcbn1cclxuIEAtd2Via2l0LWtleWZyYW1lcyBzY2FsZS1pbi10b3Age1xyXG4gICAgMCUge1xyXG4gICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgICAgICAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgwKTtcclxuICAgICAgLXdlYmtpdC10cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgICAgICAgICAgdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gICAgMTAwJSB7XHJcbiAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiBzY2FsZSgxKTtcclxuICAgICAgICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDEpO1xyXG4gICAgICAtd2Via2l0LXRyYW5zZm9ybS1vcmlnaW46IDUwJSAwJTtcclxuICAgICAgICAgICAgICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgIG9wYWNpdHk6IDE7XHJcbiAgICB9XHJcbiAgfVxyXG4gIEBrZXlmcmFtZXMgc2NhbGUtaW4tdG9wIHtcclxuICAgIDAlIHtcclxuICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlKDApO1xyXG4gICAgICAgICAgICAgIHRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgICAgIC13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICAgICAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSAwJTtcclxuICAgICAgb3BhY2l0eTogMTtcclxuICAgIH1cclxuICAgIDEwMCUge1xyXG4gICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMSk7XHJcbiAgICAgICAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgxKTtcclxuICAgICAgLXdlYmtpdC10cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgICAgICAgICAgdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gIH1cclxuICAiXX0= */"
+module.exports = "#navBar {\r\n    background-color: var(--base-color);\r\n    margin: 0;\r\n    border: 0;\r\n    border-bottom: .1rem solid var(--secondary-color-step-900);\r\n}\r\n\r\n.navbar-toggler-icon {\r\n    background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E\");\r\n}\r\n\r\n.navbar-toggler {\r\n    border: .1rem solid var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown-menu {\r\n    background-color: var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown-menu>a:hover {\r\n    background-color: var(--tertiary-color-step-500);\r\n}\r\n\r\n.nav-link {\r\n    color: white;\r\n}\r\n\r\n.dropdown-item {\r\n    color: black;\r\n}\r\n\r\n.activeLink {\r\n    color: var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown:hover>.dropdown-menu {\r\n    display: block;\r\n}\r\n\r\n.scale-in-top {\r\n    -webkit-animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n    animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n}\r\n\r\n@-webkit-keyframes scale-in-top {\r\n    0% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        -webkit-transform-origin: 50% 0%;\r\n        transform-origin: 50% 0%;\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        -webkit-transform-origin: 50% 0%;\r\n        transform-origin: 50% 0%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes scale-in-top {\r\n    0% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        -webkit-transform-origin: 50% 0%;\r\n        transform-origin: 50% 0%;\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        -webkit-transform-origin: 50% 0%;\r\n        transform-origin: 50% 0%;\r\n        opacity: 1;\r\n    }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQ0FBbUM7SUFDbkMsU0FBUztJQUNULFNBQVM7SUFDVCwwREFBMEQ7QUFDOUQ7O0FBRUE7SUFDSSx5UUFBeVE7QUFDN1E7O0FBRUE7SUFDSSxtREFBbUQ7QUFDdkQ7O0FBRUE7SUFDSSxpREFBaUQ7QUFDckQ7O0FBRUE7SUFDSSxnREFBZ0Q7QUFDcEQ7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHNDQUFzQztBQUMxQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrRkFBa0Y7SUFDbEYsMEVBQTBFO0FBQzlFOztBQUVBO0lBQ0k7UUFDSSwyQkFBMkI7UUFDM0IsbUJBQW1CO1FBQ25CLGdDQUFnQztRQUNoQyx3QkFBd0I7UUFDeEIsVUFBVTtJQUNkO0lBQ0E7UUFDSSwyQkFBMkI7UUFDM0IsbUJBQW1CO1FBQ25CLGdDQUFnQztRQUNoQyx3QkFBd0I7UUFDeEIsVUFBVTtJQUNkO0FBQ0o7O0FBRUE7SUFDSTtRQUNJLDJCQUEyQjtRQUMzQixtQkFBbUI7UUFDbkIsZ0NBQWdDO1FBQ2hDLHdCQUF3QjtRQUN4QixVQUFVO0lBQ2Q7SUFDQTtRQUNJLDJCQUEyQjtRQUMzQixtQkFBbUI7UUFDbkIsZ0NBQWdDO1FBQ2hDLHdCQUF3QjtRQUN4QixVQUFVO0lBQ2Q7QUFDSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL21lbnUvbWVudS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI25hdkJhciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYXNlLWNvbG9yKTtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIGJvcmRlci1ib3R0b206IC4xcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi5uYXZiYXItdG9nZ2xlci1pY29uIHtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbDtjaGFyc2V0PXV0ZjgsJTNDc3ZnIHZpZXdCb3g9JzAgMCAzMiAzMicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyUzRSUzQ3BhdGggc3Ryb2tlPSdyZ2JhKDI1NSwxMDIsMjAzLCAwLjcpJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvJTNFJTNDL3N2ZyUzRVwiKTtcclxufVxyXG5cclxuLm5hdmJhci10b2dnbGVyIHtcclxuICAgIGJvcmRlcjogLjFyZW0gc29saWQgdmFyKC0tc2Vjb25kYXJ5LWNvbG9yLXN0ZXAtOTAwKTtcclxufVxyXG5cclxuLmRyb3Bkb3duLW1lbnUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5LWNvbG9yLXN0ZXAtOTAwKTtcclxufVxyXG5cclxuLmRyb3Bkb3duLW1lbnU+YTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS10ZXJ0aWFyeS1jb2xvci1zdGVwLTUwMCk7XHJcbn1cclxuXHJcbi5uYXYtbGluayB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi5kcm9wZG93bi1pdGVtIHtcclxuICAgIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLmFjdGl2ZUxpbmsge1xyXG4gICAgY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi5kcm9wZG93bjpob3Zlcj4uZHJvcGRvd24tbWVudSB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxufVxyXG5cclxuLnNjYWxlLWluLXRvcCB7XHJcbiAgICAtd2Via2l0LWFuaW1hdGlvbjogc2NhbGUtaW4tdG9wIDAuMnMgY3ViaWMtYmV6aWVyKDAuMjUwLCAwLjQ2MCwgMC40NTAsIDAuOTQwKSBib3RoO1xyXG4gICAgYW5pbWF0aW9uOiBzY2FsZS1pbi10b3AgMC4ycyBjdWJpYy1iZXppZXIoMC4yNTAsIDAuNDYwLCAwLjQ1MCwgMC45NDApIGJvdGg7XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBzY2FsZS1pbi10b3Age1xyXG4gICAgMCUge1xyXG4gICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiBzY2FsZSgwKTtcclxuICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDApO1xyXG4gICAgICAgIC13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSAwJTtcclxuICAgICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gICAgMTAwJSB7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlKDEpO1xyXG4gICAgICAgIHRyYW5zZm9ybTogc2NhbGUoMSk7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgICAgdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICAgIG9wYWNpdHk6IDE7XHJcbiAgICB9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgc2NhbGUtaW4tdG9wIHtcclxuICAgIDAlIHtcclxuICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgwKTtcclxuICAgICAgICAtd2Via2l0LXRyYW5zZm9ybS1vcmlnaW46IDUwJSAwJTtcclxuICAgICAgICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgMCU7XHJcbiAgICAgICAgb3BhY2l0eTogMTtcclxuICAgIH1cclxuICAgIDEwMCUge1xyXG4gICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiBzY2FsZSgxKTtcclxuICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDEpO1xyXG4gICAgICAgIC13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjogNTAlIDAlO1xyXG4gICAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSAwJTtcclxuICAgICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG59Il19 */"
 
 /***/ }),
 
@@ -1729,7 +2088,8 @@ var MenuComponent = /** @class */ (function () {
             { tabName: 'Adivina', link: 'Juegos/Adivina' },
             { tabName: 'Agilidad', link: 'Juegos/Agilidad' },
             { tabName: 'Adivina+Listado', link: 'Juegos/AdivinaMasListado' },
-            { tabName: 'Agilidad+Listado', link: 'Juegos/AgilidadMasListado' }
+            { tabName: 'Agilidad+Listado', link: 'Juegos/AgilidadMasListado' },
+            { tabName: 'HiLo', link: 'Juegos/HiLo' }
         ];
     }
     MenuComponent.prototype.ngOnInit = function () {
@@ -1759,7 +2119,7 @@ var MenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "th {\n  text-align: center;\n}\n.texto {\n  margin-left: 2rem;\n}\na {\n  color: #fdfdfd;\n}\n.col-12 {\n  padding: 0;\n}\n.img-col {\n  height: 100%;\n}\nimg {\n  float: left;\n  width: 100%;\n  height: 100%;\n  margin-right: 3rem;\n}\n#menuPrincipal {\n  font-size: 2rem;\n}\n.table-responsive,\n.media {\n  background-color: var(--content-color);\n}\n/* .table-responsive, .col-12>tr\n{\n    border: 0.3rem solid var(--secondary-color);\n} */\n#menuPrincipal,\n#content {\n  color: black;\n}\n#topRow {\n  margin-top: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL0Y6L0ZhY3UvU2FsYS1kZS1KdWVnb3Mtdjgvc3JjL2FwcC9jb21wb25lbnRlcy9wcmluY2lwYWwvcHJpbmNpcGFsLmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRlcy9wcmluY2lwYWwvcHJpbmNpcGFsLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7QUNDSjtBREVBO0VBQ0ksaUJBQUE7QUNBSjtBREdBO0VBQ0ksY0FBQTtBQ0RKO0FESUE7RUFFSSxVQUFBO0FDSEo7QURNQTtFQUNJLFlBQUE7QUNKSjtBRE9BO0VBQ0ksV0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7QUNMSjtBRFFBO0VBRUksZUFBQTtBQ1BKO0FEVUE7O0VBRUksc0NBQUE7QUNSSjtBQUNBOzs7R0FHRztBRFlIOztFQUVJLFlBQUE7QUNWSjtBRGFBO0VBRUksYUFBQTtBQ1pKIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbInRoIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi50ZXh0byB7XG4gICAgbWFyZ2luLWxlZnQ6IDJyZW07XG59XG5cbmEge1xuICAgIGNvbG9yOiAjZmRmZGZkO1xufVxuXG4uY29sLTEyXG57XG4gICAgcGFkZGluZzogMDtcbn1cblxuLmltZy1jb2wge1xuICAgIGhlaWdodDogMTAwJTtcbn1cblxuaW1nIHtcbiAgICBmbG9hdDogbGVmdDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgbWFyZ2luLXJpZ2h0OiAzcmVtO1xufVxuXG4jbWVudVByaW5jaXBhbFxue1xuICAgIGZvbnQtc2l6ZTogMnJlbTtcbn1cblxuLnRhYmxlLXJlc3BvbnNpdmUsIC5tZWRpYVxue1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWNvbnRlbnQtY29sb3IpO1xufVxuXG4vKiAudGFibGUtcmVzcG9uc2l2ZSwgLmNvbC0xMj50clxue1xuICAgIGJvcmRlcjogMC4zcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvcik7XG59ICovXG5cbiNtZW51UHJpbmNpcGFsLCAjY29udGVudFxue1xuICAgIGNvbG9yOiBibGFjaztcbn1cblxuI3RvcFJvd1xue1xuICAgIG1hcmdpbi10b3A6IDA7XG59IiwidGgge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4udGV4dG8ge1xuICBtYXJnaW4tbGVmdDogMnJlbTtcbn1cbmEge1xuICBjb2xvcjogI2ZkZmRmZDtcbn1cbi5jb2wtMTIge1xuICBwYWRkaW5nOiAwO1xufVxuLmltZy1jb2wge1xuICBoZWlnaHQ6IDEwMCU7XG59XG5pbWcge1xuICBmbG9hdDogbGVmdDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgbWFyZ2luLXJpZ2h0OiAzcmVtO1xufVxuI21lbnVQcmluY2lwYWwge1xuICBmb250LXNpemU6IDJyZW07XG59XG4udGFibGUtcmVzcG9uc2l2ZSxcbi5tZWRpYSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWNvbnRlbnQtY29sb3IpO1xufVxuLyogLnRhYmxlLXJlc3BvbnNpdmUsIC5jb2wtMTI+dHJcbntcbiAgICBib3JkZXI6IDAuM3JlbSBzb2xpZCB2YXIoLS1zZWNvbmRhcnktY29sb3IpO1xufSAqL1xuI21lbnVQcmluY2lwYWwsXG4jY29udGVudCB7XG4gIGNvbG9yOiBibGFjaztcbn1cbiN0b3BSb3cge1xuICBtYXJnaW4tdG9wOiAwO1xufVxuIl19 */"
+module.exports = "th {\n  text-align: center;\n}\n.texto {\n  margin-left: 2rem;\n}\na {\n  color: #fdfdfd;\n  text-decoration: none;\n}\n.col-12 {\n  padding: 0;\n}\n.img-col {\n  height: 100%;\n}\nimg {\n  float: left;\n  margin-right: 3rem;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n#menuPrincipal {\n  font-size: 2rem;\n}\n.table-responsive,\n.media {\n  background-color: var(--content-color);\n}\n/* .table-responsive, .col-12>tr\n{\n    border: 0.3rem solid var(--secondary-color);\n} */\n#hoverable {\n  color: black;\n}\n#hoverable:hover {\n  color: white;\n}\n#topRow {\n  margin-top: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL0Y6L0ZhY3UvU2FsYS1kZS1KdWVnb3Mtdjgvc3JjL2FwcC9jb21wb25lbnRlcy9wcmluY2lwYWwvcHJpbmNpcGFsLmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRlcy9wcmluY2lwYWwvcHJpbmNpcGFsLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7QUNDSjtBREVBO0VBQ0ksaUJBQUE7QUNBSjtBREdBO0VBQ0ksY0FBQTtFQUNBLHFCQUFBO0FDREo7QURJQTtFQUVJLFVBQUE7QUNISjtBRE1BO0VBQ0ksWUFBQTtBQ0pKO0FET0E7RUFDSSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxzQkFBQTtLQUFBLG1CQUFBO0FDTEo7QURRQTtFQUVJLGVBQUE7QUNQSjtBRFVBOztFQUVJLHNDQUFBO0FDUko7QUFDQTs7O0dBR0c7QURhSDtFQUVJLFlBQUE7QUNaSjtBRGVBO0VBRUksWUFBQTtBQ2RKO0FEaUJBO0VBRUksYUFBQTtBQ2hCSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3ByaW5jaXBhbC9wcmluY2lwYWwuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0aCB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4udGV4dG8ge1xuICAgIG1hcmdpbi1sZWZ0OiAycmVtO1xufVxuXG5hIHtcbiAgICBjb2xvcjogI2ZkZmRmZDtcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5jb2wtMTJcbntcbiAgICBwYWRkaW5nOiAwO1xufVxuXG4uaW1nLWNvbCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG5pbWcge1xuICAgIGZsb2F0OiBsZWZ0O1xuICAgIG1hcmdpbi1yaWdodDogM3JlbTtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xufVxuXG4jbWVudVByaW5jaXBhbFxue1xuICAgIGZvbnQtc2l6ZTogMnJlbTtcbn1cblxuLnRhYmxlLXJlc3BvbnNpdmUsIC5tZWRpYVxue1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWNvbnRlbnQtY29sb3IpO1xufVxuXG4vKiAudGFibGUtcmVzcG9uc2l2ZSwgLmNvbC0xMj50clxue1xuICAgIGJvcmRlcjogMC4zcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvcik7XG59ICovXG5cblxuI2hvdmVyYWJsZVxue1xuICAgIGNvbG9yOiBibGFjaztcbn1cblxuI2hvdmVyYWJsZTpob3Zlclxue1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuI3RvcFJvd1xue1xuICAgIG1hcmdpbi10b3A6IDA7XG59IiwidGgge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4udGV4dG8ge1xuICBtYXJnaW4tbGVmdDogMnJlbTtcbn1cbmEge1xuICBjb2xvcjogI2ZkZmRmZDtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuLmNvbC0xMiB7XG4gIHBhZGRpbmc6IDA7XG59XG4uaW1nLWNvbCB7XG4gIGhlaWdodDogMTAwJTtcbn1cbmltZyB7XG4gIGZsb2F0OiBsZWZ0O1xuICBtYXJnaW4tcmlnaHQ6IDNyZW07XG4gIG9iamVjdC1maXQ6IGNvbnRhaW47XG59XG4jbWVudVByaW5jaXBhbCB7XG4gIGZvbnQtc2l6ZTogMnJlbTtcbn1cbi50YWJsZS1yZXNwb25zaXZlLFxuLm1lZGlhIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tY29udGVudC1jb2xvcik7XG59XG4vKiAudGFibGUtcmVzcG9uc2l2ZSwgLmNvbC0xMj50clxue1xuICAgIGJvcmRlcjogMC4zcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvcik7XG59ICovXG4jaG92ZXJhYmxlIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuI2hvdmVyYWJsZTpob3ZlciB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbiN0b3BSb3cge1xuICBtYXJnaW4tdG9wOiAwO1xufVxuIl19 */"
 
 /***/ }),
 
@@ -1784,7 +2144,7 @@ var PrincipalComponent = /** @class */ (function () {
             isFirstDisabled: false
         };
         this.content = [{ link: '/Juegos', img: './assets/imagenes/saladejuegos.png', heading: 'Juegos', content: "El m\u00E9todo l\u00FAdico es un\n   conjunto de estrategias dise\u00F1adas para crear un ambiente de armon\u00EDa en los estudiantes que est\u00E1n inmersos en el proceso de\n    aprendizaje. Este m\u00E9todo busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego." },
-            { link: '/Listado', img: './assets/imagenes/listado.jpg', heading: 'Listados de resultados', content: "Los listados de los resultados \n    con ordenamiento y busqueda" },
+            { link: '/Listado', img: './assets/imagenes/listado.png', heading: 'Listados de resultados', content: "Los listados de los resultados \n    con ordenamiento y busqueda" },
             { link: '/Configuracion', img: './assets/imagenes/Configuracion.png', heading: 'Configuración',
                 content: "Ajustes de la aplicacion y los m\u00E9todos de autentificaci\u00F3n" },
             { link: '/Jugadores', img: './assets/imagenes/jugadores.png', heading: 'Jugadores',
@@ -1813,7 +2173,7 @@ var PrincipalComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".imagenDeQuienSoy{\r\n    width: 100%;\r\n   \r\n    }\r\nbody {\r\n    font: 20px Montserrat, sans-serif;\r\n    line-height: 1.8;\r\n    color: #f5f6f7;\r\n}\r\np {font-size: 16px;}\r\n.margin {margin-bottom: 45px;}\r\n.bg-1 { \r\n    background-color: #1abc9c; /* Green */\r\n    color: #ffffff;\r\n}\r\n.bg-2 { \r\n    background-color: #474e5d; /* Dark Blue */\r\n    color: #ffffff;\r\n}\r\n.bg-3 { \r\n    background-color: #ffffff; /* White */\r\n    color: #555555;\r\n}\r\n.bg-4 { \r\n    background-color: #2f2f2f; /* Black Gray */\r\n    color: #fff;\r\n}\r\n.container-fluid {\r\n    padding-top: 70px;\r\n    padding-bottom: 70px;\r\n}\r\n.navbar {\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    border: 0;\r\n    border-radius: 0;\r\n    margin-bottom: 0;\r\n    font-size: 12px;\r\n    letter-spacing: 5px;\r\n}\r\n.navbar-nav  li a:hover {\r\n    color: #1abc9c !important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcXVpZW4tc295L3F1aWVuLXNveS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVzs7SUFFWDtBQUNKO0lBQ0ksaUNBQWlDO0lBQ2pDLGdCQUFnQjtJQUNoQixjQUFjO0FBQ2xCO0FBQ0EsR0FBRyxlQUFlLENBQUM7QUFDbkIsU0FBUyxtQkFBbUIsQ0FBQztBQUM3QjtJQUNJLHlCQUF5QixFQUFFLFVBQVU7SUFDckMsY0FBYztBQUNsQjtBQUNBO0lBQ0kseUJBQXlCLEVBQUUsY0FBYztJQUN6QyxjQUFjO0FBQ2xCO0FBQ0E7SUFDSSx5QkFBeUIsRUFBRSxVQUFVO0lBQ3JDLGNBQWM7QUFDbEI7QUFDQTtJQUNJLHlCQUF5QixFQUFFLGVBQWU7SUFDMUMsV0FBVztBQUNmO0FBQ0E7SUFDSSxpQkFBaUI7SUFDakIsb0JBQW9CO0FBQ3hCO0FBQ0E7SUFDSSxpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLFNBQVM7SUFDVCxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixtQkFBbUI7QUFDdkI7QUFDQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3F1aWVuLXNveS9xdWllbi1zb3kuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZW5EZVF1aWVuU295e1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgIFxyXG4gICAgfVxyXG5ib2R5IHtcclxuICAgIGZvbnQ6IDIwcHggTW9udHNlcnJhdCwgc2Fucy1zZXJpZjtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjg7XHJcbiAgICBjb2xvcjogI2Y1ZjZmNztcclxufVxyXG5wIHtmb250LXNpemU6IDE2cHg7fVxyXG4ubWFyZ2luIHttYXJnaW4tYm90dG9tOiA0NXB4O31cclxuLmJnLTEgeyBcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMxYWJjOWM7IC8qIEdyZWVuICovXHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxufVxyXG4uYmctMiB7IFxyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzQ3NGU1ZDsgLyogRGFyayBCbHVlICovXHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxufVxyXG4uYmctMyB7IFxyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgLyogV2hpdGUgKi9cclxuICAgIGNvbG9yOiAjNTU1NTU1O1xyXG59XHJcbi5iZy00IHsgXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmYyZjJmOyAvKiBCbGFjayBHcmF5ICovXHJcbiAgICBjb2xvcjogI2ZmZjtcclxufVxyXG4uY29udGFpbmVyLWZsdWlkIHtcclxuICAgIHBhZGRpbmctdG9wOiA3MHB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDcwcHg7XHJcbn1cclxuLm5hdmJhciB7XHJcbiAgICBwYWRkaW5nLXRvcDogMTVweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxNXB4O1xyXG4gICAgYm9yZGVyOiAwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogNXB4O1xyXG59XHJcbi5uYXZiYXItbmF2ICBsaSBhOmhvdmVyIHtcclxuICAgIGNvbG9yOiAjMWFiYzljICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"
+module.exports = "#navBar {\r\n    background-color: var(--base-color);\r\n    margin: 0;\r\n    border: 0;\r\n    border-bottom: .1rem solid var(--secondary-color-step-900);\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 999;\r\n}\r\n\r\n.navbar-toggler-icon {\r\n    background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E\");\r\n}\r\n\r\n.navbar-toggler {\r\n    border: .1rem solid var(--secondary-color-step-900);\r\n}\r\n\r\n.dropdown-menu {\r\n    background-color: var(--secondary-color-step-900);\r\n}\r\n\r\n.tabs>a:hover {\r\n    color: var(--secondary-color-step-900);\r\n}\r\n\r\n.tabs>a, footer>p>a {\r\n    color: white;\r\n    text-decoration: none;\r\n    padding-bottom: .3rem;\r\n}\r\n\r\n.hvr-underline-from-center:hover {\r\n    color: var(--secondary-color-step-900);\r\n}\r\n\r\n.tabs {\r\n    padding-right: 2rem;\r\n}\r\n\r\n#whoAmIText\r\n{\r\n    margin: 2% 0;\r\n}\r\n\r\n#whoAmIImg\r\n{\r\n    width: 50%;\r\n    height: 50%;\r\n    border-radius: 50%;\r\n    align-self: center;\r\n}\r\n\r\n#who\r\n{\r\n    background-color: var(--secondary-color-step-600);\r\n}\r\n\r\n#what\r\n{\r\n    background-color: var(--base-color-step-600);\r\n    color: white;\r\n    border-bottom: .3rem solid var(--tertiary-color-step-700);\r\n}\r\n\r\n#where\r\n{\r\n    background-color: var(--tertiary-color);\r\n    color: white;\r\n}\r\n\r\nbody {\r\n    font: 20px Montserrat, sans-serif;\r\n    line-height: 1.8;\r\n    color: #f5f6f7;\r\n}\r\n\r\np {\r\n    font-size: 16px;\r\n}\r\n\r\n.margin {\r\n    margin-bottom: 45px;\r\n}\r\n\r\n.bg-4 {\r\n    background-color: #2f2f2f;\r\n    /* Black Gray */\r\n    color: #fff;\r\n}\r\n\r\n.container-fluid {\r\n    padding-top: 70px;\r\n    padding-bottom: 70px;\r\n}\r\n\r\n.navbar {\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    border: 0;\r\n    border-radius: 0;\r\n    margin-bottom: 0;\r\n    font-size: 12px;\r\n    letter-spacing: 5px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcXVpZW4tc295L3F1aWVuLXNveS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksbUNBQW1DO0lBQ25DLFNBQVM7SUFDVCxTQUFTO0lBQ1QsMERBQTBEO0lBQzFELGVBQWU7SUFDZixXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHlRQUF5UTtBQUM3UTs7QUFFQTtJQUNJLG1EQUFtRDtBQUN2RDs7QUFFQTtJQUNJLGlEQUFpRDtBQUNyRDs7QUFFQTtJQUNJLHNDQUFzQztBQUMxQzs7QUFFQTtJQUNJLFlBQVk7SUFDWixxQkFBcUI7SUFDckIscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksc0NBQXNDO0FBQzFDOztBQUVBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBOztJQUVJLFlBQVk7QUFDaEI7O0FBRUE7O0lBRUksVUFBVTtJQUNWLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsa0JBQWtCO0FBQ3RCOztBQUVBOztJQUVJLGlEQUFpRDtBQUNyRDs7QUFFQTs7SUFFSSw0Q0FBNEM7SUFDNUMsWUFBWTtJQUNaLHlEQUF5RDtBQUM3RDs7QUFFQTs7SUFFSSx1Q0FBdUM7SUFDdkMsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGlDQUFpQztJQUNqQyxnQkFBZ0I7SUFDaEIsY0FBYztBQUNsQjs7QUFLQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtJQUNmLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLFNBQVM7SUFDVCxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixtQkFBbUI7QUFDdkIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9xdWllbi1zb3kvcXVpZW4tc295LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbmF2QmFyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhc2UtY29sb3IpO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgYm9yZGVyOiAwO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogLjFyZW0gc29saWQgdmFyKC0tc2Vjb25kYXJ5LWNvbG9yLXN0ZXAtOTAwKTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgei1pbmRleDogOTk5O1xyXG59XHJcblxyXG4ubmF2YmFyLXRvZ2dsZXItaWNvbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7Y2hhcnNldD11dGY4LCUzQ3N2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyclM0UlM0NwYXRoIHN0cm9rZT0ncmdiYSgyNTUsMTAyLDIwMywgMC43KScgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1taXRlcmxpbWl0PScxMCcgZD0nTTQgOGgyNE00IDE2aDI0TTQgMjRoMjQnLyUzRSUzQy9zdmclM0VcIik7XHJcbn1cclxuXHJcbi5uYXZiYXItdG9nZ2xlciB7XHJcbiAgICBib3JkZXI6IC4xcmVtIHNvbGlkIHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi5kcm9wZG93bi1tZW51IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi50YWJzPmE6aG92ZXIge1xyXG4gICAgY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbn1cclxuXHJcbi50YWJzPmEsIGZvb3Rlcj5wPmEge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gICAgcGFkZGluZy1ib3R0b206IC4zcmVtO1xyXG59XHJcblxyXG4uaHZyLXVuZGVybGluZS1mcm9tLWNlbnRlcjpob3ZlciB7XHJcbiAgICBjb2xvcjogdmFyKC0tc2Vjb25kYXJ5LWNvbG9yLXN0ZXAtOTAwKTtcclxufVxyXG5cclxuLnRhYnMge1xyXG4gICAgcGFkZGluZy1yaWdodDogMnJlbTtcclxufVxyXG5cclxuI3dob0FtSVRleHRcclxue1xyXG4gICAgbWFyZ2luOiAyJSAwO1xyXG59XHJcblxyXG4jd2hvQW1JSW1nXHJcbntcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDUwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcclxufVxyXG5cclxuI3dob1xyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnktY29sb3Itc3RlcC02MDApO1xyXG59XHJcblxyXG4jd2hhdFxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYXNlLWNvbG9yLXN0ZXAtNjAwKTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGJvcmRlci1ib3R0b206IC4zcmVtIHNvbGlkIHZhcigtLXRlcnRpYXJ5LWNvbG9yLXN0ZXAtNzAwKTtcclxufVxyXG5cclxuI3doZXJlXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRlcnRpYXJ5LWNvbG9yKTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuYm9keSB7XHJcbiAgICBmb250OiAyMHB4IE1vbnRzZXJyYXQsIHNhbnMtc2VyaWY7XHJcbiAgICBsaW5lLWhlaWdodDogMS44O1xyXG4gICAgY29sb3I6ICNmNWY2Zjc7XHJcbn1cclxuXHJcblxyXG5cclxuXHJcbnAge1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcblxyXG4ubWFyZ2luIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDQ1cHg7XHJcbn1cclxuXHJcbi5iZy00IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyZjJmMmY7XHJcbiAgICAvKiBCbGFjayBHcmF5ICovXHJcbiAgICBjb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLmNvbnRhaW5lci1mbHVpZCB7XHJcbiAgICBwYWRkaW5nLXRvcDogNzBweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA3MHB4O1xyXG59XHJcblxyXG4ubmF2YmFyIHtcclxuICAgIHBhZGRpbmctdG9wOiAxNXB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDE1cHg7XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMDtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiA1cHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1829,13 +2189,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuienSoyComponent", function() { return QuienSoyComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ng_animate_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-animate-scroll */ "./node_modules/ng-animate-scroll/fesm5/ng-animate-scroll.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
+
+
 
 
 var QuienSoyComponent = /** @class */ (function () {
-    function QuienSoyComponent() {
+    function QuienSoyComponent(animateScrollService) {
+        this.animateScrollService = animateScrollService;
+        this.initView = false;
+        this.initWho = false;
     }
     QuienSoyComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        aos__WEBPACK_IMPORTED_MODULE_3___default.a.init();
+        setTimeout(function () {
+            _this.initView = true;
+        }, 1000);
+        setTimeout(function () {
+            _this.initWho = true;
+        }, 1500);
     };
+    QuienSoyComponent.prototype.navigateTo = function (id, duration) {
+        this.animateScrollService.scrollToElement(id, duration);
+    };
+    QuienSoyComponent.ctorParameters = function () { return [
+        { type: ng_animate_scroll__WEBPACK_IMPORTED_MODULE_2__["NgAnimateScrollService"] }
+    ]; };
     QuienSoyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-quien-soy',
@@ -1895,6 +2277,59 @@ var RegistroComponent = /** @class */ (function () {
         })
     ], RegistroComponent);
     return RegistroComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/snack-bar-template/snack-bar-template.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/componentes/snack-bar-template/snack-bar-template.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "*\r\n{\r\n    background-color: red;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvc25hY2stYmFyLXRlbXBsYXRlL3NuYWNrLWJhci10ZW1wbGF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLHFCQUFxQjtBQUN6QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3NuYWNrLWJhci10ZW1wbGF0ZS9zbmFjay1iYXItdGVtcGxhdGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/componentes/snack-bar-template/snack-bar-template.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/componentes/snack-bar-template/snack-bar-template.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: SnackBarTemplateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SnackBarTemplateComponent", function() { return SnackBarTemplateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm5/snack-bar.es5.js");
+
+
+
+var SnackBarTemplateComponent = /** @class */ (function () {
+    function SnackBarTemplateComponent(data, snackBarRef) {
+        this.data = data;
+        this.snackBarRef = snackBarRef;
+    }
+    SnackBarTemplateComponent.prototype.ngOnInit = function () {
+    };
+    SnackBarTemplateComponent.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MAT_SNACK_BAR_DATA"],] }] },
+        { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarRef"] }
+    ]; };
+    SnackBarTemplateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-snack-bar-template',
+            template: __webpack_require__(/*! raw-loader!./snack-bar-template.component.html */ "./node_modules/raw-loader/index.js!./src/app/componentes/snack-bar-template/snack-bar-template.component.html"),
+            styles: [__webpack_require__(/*! ./snack-bar-template.component.css */ "./src/app/componentes/snack-bar-template/snack-bar-template.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MAT_SNACK_BAR_DATA"]))
+    ], SnackBarTemplateComponent);
+    return SnackBarTemplateComponent;
 }());
 
 
@@ -2005,9 +2440,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_mapa_de_google_mapa_de_google_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../componentes/mapa-de-google/mapa-de-google.component */ "./src/app/componentes/mapa-de-google/mapa-de-google.component.ts");
 /* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
 /* harmony import */ var _componentes_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../componentes/inicio/inicio.component */ "./src/app/componentes/inicio/inicio.component.ts");
+/* harmony import */ var _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../componentes/hi-lo/hi-lo.component */ "./src/app/componentes/hi-lo/hi-lo.component.ts");
 
 
 // importo del module principal
+
 
 
 
@@ -2036,13 +2473,13 @@ var MiRuteo = [
     { path: 'Principal', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_6__["PrincipalComponent"] },
     { path: 'Listado', component: _componentes_listado_listado_component__WEBPACK_IMPORTED_MODULE_10__["ListadoComponent"] },
     { path: 'Paises', component: _componentes_listado_de_paises_listado_de_paises_component__WEBPACK_IMPORTED_MODULE_15__["ListadoDePaisesComponent"] },
-    { path: 'Juegos',
-        component: _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_11__["JuegosComponent"],
-        children: [{ path: '', component: _componentes_menu_card_menu_card_component__WEBPACK_IMPORTED_MODULE_13__["MenuCardComponent"] },
+    {
+        path: 'Juegos', component: _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_11__["JuegosComponent"], children: [{ path: '', component: _componentes_menu_card_menu_card_component__WEBPACK_IMPORTED_MODULE_13__["MenuCardComponent"] },
             { path: 'Adivina', component: _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_3__["AdivinaElNumeroComponent"] },
             { path: 'AdivinaMasListado', component: _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__["AdivinaMasListadoComponent"] },
             { path: 'AgilidadMasListado', component: _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_9__["AgilidadMasListadoComponent"] },
-            { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__["AgilidadAritmeticaComponent"] }]
+            { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__["AgilidadAritmeticaComponent"] },
+            { path: 'HiLo', component: _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_19__["HiLoComponent"] }]
     },
     { path: '**', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_5__["ErrorComponent"] },
     { path: 'error', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_5__["ErrorComponent"] }
@@ -2053,7 +2490,10 @@ var RuteandoModule = /** @class */ (function () {
     RuteandoModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(MiRuteo)
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(MiRuteo, {
+                    scrollPositionRestoration: 'enabled',
+                    anchorScrolling: 'enabled'
+                })
             ],
             exports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]
@@ -2106,6 +2546,51 @@ var ArchivosJugadoresService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
     ], ArchivosJugadoresService);
     return ArchivosJugadoresService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/servicios/firebase-auth.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/servicios/firebase-auth.service.ts ***!
+  \****************************************************/
+/*! exports provided: FirebaseAuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseAuthService", function() { return FirebaseAuthService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+
+
+
+var FirebaseAuthService = /** @class */ (function () {
+    function FirebaseAuthService(afsAuth) {
+        this.afsAuth = afsAuth;
+    }
+    FirebaseAuthService.prototype.loginEmailUser = function (email, password) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.afsAuth.auth.signInWithEmailAndPassword(email, password).
+                then(function (userData) { return resolve(userData); }, function (err) { return reject(err); });
+        });
+    };
+    FirebaseAuthService.prototype.logOut = function () {
+        return this.afsAuth.auth.signOut();
+    };
+    FirebaseAuthService.ctorParameters = function () { return [
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] }
+    ]; };
+    FirebaseAuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], FirebaseAuthService);
+    return FirebaseAuthService;
 }());
 
 
@@ -2362,22 +2847,18 @@ var PaisesService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/environments/environment.ts":
-/*!*****************************************!*\
-  !*** ./src/environments/environment.ts ***!
-  \*****************************************/
+/***/ "./src/environments/environment.prod.ts":
+/*!**********************************************!*\
+  !*** ./src/environments/environment.prod.ts ***!
+  \**********************************************/
 /*! exports provided: environment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: true
 };
 
 
@@ -2395,12 +2876,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment.prod */ "./src/environments/environment.prod.ts");
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+if (_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
 Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"]);
