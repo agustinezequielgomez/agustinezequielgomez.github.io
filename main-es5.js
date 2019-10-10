@@ -195,7 +195,7 @@ module.exports = "<!--div *ngFor=\"let juego of listado\">\r\n\r\n<p> {{juego.no
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table table-responsive overflow-auto\">\r\n  <thead>\r\n    <tr>\r\n      <th>Usuario</th>\r\n      <th>Fecha</th>\r\n      <th>Puntuacion</th>\r\n    </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let registro of this.listado\">\r\n        <td scope=\"row\">{{registro.usuario}}</td>\r\n        <td>{{registro.fecha | date}}</td>\r\n        <td>{{registro.puntuacion}}</td>\r\n      </tr>\r\n    </tbody>\r\n</table>"
+module.exports = "<table class=\"table table-responsive overflow-auto vivify fadeInTop\">\r\n  <thead>\r\n    <tr>\r\n      <th>Juego</th>\r\n      <th>Usuario</th>\r\n      <th>Fecha</th>\r\n      <th>Puntuacion</th>\r\n    </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let registro of this.listado\">\r\n        <td>Hi-Lo</td>\r\n        <td scope=\"row\">{{registro.usuario}}</td>\r\n        <td>{{registro.fecha | date}}</td>\r\n        <td>{{registro.puntuacion}}</td>\r\n      </tr>\r\n    </tbody>\r\n</table>"
 
 /***/ }),
 
@@ -276,6 +276,17 @@ module.exports = "<!-- <nav class=\"navbar navbar-default\">\r\n    <div class=\
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/componentes/registracion-dialog/registracion-dialog.component.html":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/componentes/registracion-dialog/registracion-dialog.component.html ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>Registro</h1>\n<div mat-dialog-content>\n  <form [formGroup]=\"this.form\">\n    <p>\n      <mat-form-field appearance=\"outline\">\n        <mat-label>Email</mat-label>\n        <input matInput placeholder=\"Email\" formControlName=\"email\">\n        <mat-hint *ngIf=\"this.form.controls['email'].errors?.required\" class=\"text-danger\">El mail es un campo requerido</mat-hint>\n        <mat-hint *ngIf=\"this.form.controls['email'].errors?.email\" class=\"text-danger\">El mail no cuenta con el formato correcto</mat-hint>\n      </mat-form-field>\n    </p>\n    <p>\n      <mat-form-field appearance=\"outline\">\n        <mat-label>Contraseña</mat-label>\n        <input type=\"{{this.type}}\" matInput placeholder=\"Contraseña\" formControlName=\"contraseña\">\n        <mat-hint *ngIf=\"pass.invalid\" class=\"text-danger\">La contraseña es un campo requerido</mat-hint>\n      </mat-form-field>\n    </p>\n    <mat-slide-toggle [checked]=\"this.toggle\" [color]=\"'primary'\" (change)=\"this.showPass()\">Mostrar contraseña</mat-slide-toggle>\n  </form>\n</div>\n<div mat-dialog-actions>\n  <button id=\"register\" class=\"w-100\" mat-raised-button [disabled]=\"this.form.invalid\" (click)=\"this.register()\">Registrarse</button>\n  <mat-progress-bar *ngIf=\"this.processing\" id=\"progressBar\" class=\"vivify fadeIn\" mode=\"indeterminate\"></mat-progress-bar>\n  <p *ngIf=\"this.success\" id=\"success\" class=\"text-success text-center vivify fadeIn\">Registracion realizada con exito</p>\n</div>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/componentes/registro/registro.component.html":
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/componentes/registro/registro.component.html ***!
@@ -283,7 +294,7 @@ module.exports = "<!-- <nav class=\"navbar navbar-default\">\r\n    <div class=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\r\n  <div class=\"jumbotron\">\r\n    <h2 id=\"terminos\">Terminos y condiciones</h2>\r\n    <p>El Gobierno de la República Argentina (en adelante el “Gobierno Nacional”) no es responsable por los daños y perjuicios que puedan surgir, incluyendo, sin límite, daños, pérdidas o gastos directos, indirectos, que surjan en relación con el uso de los Activos Digitales o la imposibilidad de uso, en relación con cualquier falla en el vencimiento, error, omisión, interrupción, defecto, demora en la operación o transmisión, virus de computadora o falla del sistema de línea, aún en el caso de que el Gobierno Nacional o sus representantes fueran informados sobre la posibilidad de dichos daños, pérdidas o gastos.</p>\r\n    <p>El Gobierno Nacional no controla ni garantiza la ausencia de virus ni de otros elementos en los contenidos que puedan producir alteraciones en su sistema informático (software y hardware) o en los documentos electrónicos y ficheros almacenados en su sistema informático.</p>\r\n    <p>El Gobierno Nacional no puede garantizar que la transmisión de información por parte de los Usuarios sea completamente segura. El Usuario asume este riesgo.</p>\r\n   \r\n  </div>\r\n  <strong><p>No leer lo anterior, es solo un ejemplo sacado de https://www.argentina.gob.ar/terminos-y-condiciones </p></strong>\r\n  <button onclick=\"document.getElementById('id01').style.display='block'\" style=\"width:auto;\">Acepto</button>\r\n  <button  class=\"cancelbtn\"  routerLink=\"/Principal\" style=\"width:auto;\">No acepto</button>\r\n  <div id=\"id01\" class=\"modal\">\r\n    <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">×</span>\r\n    <form class=\"modal-content animate\" >\r\n      <div class=\"container\">\r\n        <label><b>Email</b></label>\r\n        <input type=\"text\" placeholder=\"Ingresa tu correo\" name=\"email\" required>\r\n  \r\n        <label><b>Clave</b></label>\r\n        <input type=\"password\" placeholder=\"Aca la clave\" name=\"psw\" required>\r\n  \r\n        <label><b>Repita la clave</b></label>\r\n        <input type=\"password\" placeholder=\"Aca repeti la misa clave  de arriba\" name=\"psw-repeat\" required>\r\n        <input type=\"checkbox\" checked=\"checked\">Recordar mis datos\r\n        <p>creando la cuenta aceptando los<a  onclick=\"document.getElementById('id01').style.display='none'\"  >Terminos y condiciones</a>.</p>\r\n  \r\n        <div class=\"clearfix\">\r\n          <button type=\"button\" onclick=\"document.getElementById('id01').style.display='none'\" class=\"cancelbtn\">Me arrepenti</button>\r\n          <button type=\"submit\" class=\"signupbtn\">Registrarme</button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  \r\n  <script>\r\n  // Get the modal\r\n  var modal = document.getElementById('id01');\r\n  \r\n  // When the user clicks anywhere outside of the modal, close it\r\n  window.onclick = function(event) {\r\n      if (event.target == modal) {\r\n          modal.style.display = \"none\";\r\n      }\r\n  }\r\n  </script>\r\n  \r\n  </body>"
+module.exports = "<div class=\"container-fluid vivify driveInTop duration-1500\">\r\n<mat-card id=\"termsAndConditions\">\r\n  <mat-card-header>\r\n    <mat-card-title>\r\n      Terminos y condiciones\r\n    </mat-card-title>\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <p>El Gobierno de la República Argentina (en adelante el “Gobierno Nacional”) no es responsable por los daños y perjuicios que puedan surgir, incluyendo, sin límite, daños, pérdidas o gastos directos, indirectos, que surjan en relación con el uso de los Activos Digitales o la imposibilidad de uso, en relación con cualquier falla en el vencimiento, error, omisión, interrupción, defecto, demora en la operación o transmisión, virus de computadora o falla del sistema de línea, aún en el caso de que el Gobierno Nacional o sus representantes fueran informados sobre la posibilidad de dichos daños, pérdidas o gastos.</p>\r\n    <p>El Gobierno Nacional no controla ni garantiza la ausencia de virus ni de otros elementos en los contenidos que puedan producir alteraciones en su sistema informático (software y hardware) o en los documentos electrónicos y ficheros almacenados en su sistema informático.</p>\r\n    <p>El Gobierno Nacional no puede garantizar que la transmisión de información por parte de los Usuarios sea completamente segura. El Usuario asume este riesgo.</p>\r\n  </mat-card-content>\r\n  <mat-card-actions>\r\n    <button id=\"decline\" mat-raised-button (click)=\"this.decline()\">No acepto</button>\r\n    <button id=\"accept\" mat-raised-button (click)=\"this.accept()\">Acepto</button>\r\n  </mat-card-actions>\r\n  <mat-hint id=\"hint\">Los terminos y condiciones son cualquier cosa*</mat-hint>\r\n</mat-card>\r\n</div>"
 
 /***/ }),
 
@@ -486,6 +497,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./componentes/hi-lo/hi-lo.component */ "./src/app/componentes/hi-lo/hi-lo.component.ts");
 /* harmony import */ var _Services_http_service__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./Services/http.service */ "./src/app/Services/http.service.ts");
 /* harmony import */ var _Services_high_low_service__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./Services/high-low.service */ "./src/app/Services/high-low.service.ts");
+/* harmony import */ var _componentes_registracion_dialog_registracion_dialog_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./componentes/registracion-dialog/registracion-dialog.component */ "./src/app/componentes/registracion-dialog/registracion-dialog.component.ts");
 
 
 
@@ -521,6 +533,7 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
 
 {path: '**' , component: ErrorComponent} ];
 */
+
 
 
 
@@ -589,7 +602,8 @@ var AppModule = /** @class */ (function () {
                 _pipes_sanitizer_pipe__WEBPACK_IMPORTED_MODULE_35__["SanitizerPipe"],
                 _componentes_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_40__["InicioComponent"],
                 _componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__["SnackBarTemplateComponent"],
-                _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_45__["HiLoComponent"]
+                _componentes_hi_lo_hi_lo_component__WEBPACK_IMPORTED_MODULE_45__["HiLoComponent"],
+                _componentes_registracion_dialog_registracion_dialog_component__WEBPACK_IMPORTED_MODULE_48__["RegistracionDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -609,6 +623,9 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatProgressBarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatProgressSpinnerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_39__["MatSlideToggleModule"],
                 _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"].forRoot({
                     apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
                 })
@@ -619,7 +636,7 @@ var AppModule = /** @class */ (function () {
             providers: [_servicios_juego_service_service__WEBPACK_IMPORTED_MODULE_22__["JuegoServiceService"], _servicios_mi_http_mi_http_service__WEBPACK_IMPORTED_MODULE_9__["MiHttpService"], _servicios_paises_service__WEBPACK_IMPORTED_MODULE_10__["PaisesService"], _servicios_archivos_jugadores_service__WEBPACK_IMPORTED_MODULE_12__["ArchivosJugadoresService"], _servicios_jugadores_service__WEBPACK_IMPORTED_MODULE_11__["JugadoresService"], _Services_http_service__WEBPACK_IMPORTED_MODULE_46__["HttpService"], _Services_high_low_service__WEBPACK_IMPORTED_MODULE_47__["HighLowService"],
                 { provide: _angular_material__WEBPACK_IMPORTED_MODULE_39__["MAT_SNACK_BAR_DEFAULT_OPTIONS"], useValue: { duration: 2500, action: 'Cerrar' } }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
-            entryComponents: [_componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__["SnackBarTemplateComponent"]]
+            entryComponents: [_componentes_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_44__["SnackBarTemplateComponent"], _componentes_registracion_dialog_registracion_dialog_component__WEBPACK_IMPORTED_MODULE_48__["RegistracionDialogComponent"]],
         })
     ], AppModule);
     return AppModule;
@@ -2232,6 +2249,121 @@ var QuienSoyComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/componentes/registracion-dialog/registracion-dialog.component.css":
+/*!***********************************************************************************!*\
+  !*** ./src/app/componentes/registracion-dialog/registracion-dialog.component.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "mat-form-field {\r\n    display: inline;\r\n}\r\n\r\n#register {\r\n    background-color: var(--secondary-color-step-900);\r\n    margin-bottom: 1%;\r\n}\r\n\r\n#success {\r\n    margin-top: 2%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcmVnaXN0cmFjaW9uLWRpYWxvZy9yZWdpc3RyYWNpb24tZGlhbG9nLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0FBQ25COztBQUVBO0lBQ0ksaURBQWlEO0lBQ2pELGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGNBQWM7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9yZWdpc3RyYWNpb24tZGlhbG9nL3JlZ2lzdHJhY2lvbi1kaWFsb2cuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1mb3JtLWZpZWxkIHtcclxuICAgIGRpc3BsYXk6IGlubGluZTtcclxufVxyXG5cclxuI3JlZ2lzdGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXNlY29uZGFyeS1jb2xvci1zdGVwLTkwMCk7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxJTtcclxufVxyXG5cclxuI3N1Y2Nlc3Mge1xyXG4gICAgbWFyZ2luLXRvcDogMiU7XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/componentes/registracion-dialog/registracion-dialog.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/componentes/registracion-dialog/registracion-dialog.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: RegistracionDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistracionDialogComponent", function() { return RegistracionDialogComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_servicios_firebase_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/servicios/firebase-auth.service */ "./src/app/servicios/firebase-auth.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../snack-bar-template/snack-bar-template.component */ "./src/app/componentes/snack-bar-template/snack-bar-template.component.ts");
+
+
+
+
+
+
+
+
+var RegistracionDialogComponent = /** @class */ (function () {
+    function RegistracionDialogComponent(snackBar, authService, router, dialogRef) {
+        this.snackBar = snackBar;
+        this.authService = authService;
+        this.router = router;
+        this.dialogRef = dialogRef;
+        this.processing = false;
+        this.success = false;
+        this.toggle = false;
+        this.type = 'password';
+    }
+    Object.defineProperty(RegistracionDialogComponent.prototype, "email", {
+        get: function () { return this.form.get('email'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegistracionDialogComponent.prototype, "pass", {
+        get: function () { return this.form.get('contraseña'); },
+        enumerable: true,
+        configurable: true
+    });
+    RegistracionDialogComponent.prototype.ngOnInit = function () {
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]),
+            contraseña: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        });
+    };
+    RegistracionDialogComponent.prototype.showPass = function () {
+        this.toggle = !this.toggle;
+        if (this.toggle) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    RegistracionDialogComponent.prototype.register = function () {
+        var _this = this;
+        this.processing = true;
+        this.authService.registerEmailUser(this.email.value, this.pass.value).
+            then(function () {
+            Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["timer"])(1000).subscribe(function () {
+                _this.processing = false;
+                _this.success = true;
+                Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["timer"])(1500).subscribe(function () {
+                    _this.dialogRef.close();
+                    _this.router.navigate(['/Login']);
+                });
+            });
+        }, function (err) {
+            _this.snackBar.openFromComponent(_snack_bar_template_snack_bar_template_component__WEBPACK_IMPORTED_MODULE_7__["SnackBarTemplateComponent"], {
+                data: {
+                    error: err,
+                    action: 'Cerrar'
+                }
+            });
+        });
+    };
+    RegistracionDialogComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"] },
+        { type: src_app_servicios_firebase_auth_service__WEBPACK_IMPORTED_MODULE_4__["FirebaseAuthService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"] }
+    ]; };
+    RegistracionDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-registracion-dialog',
+            template: __webpack_require__(/*! raw-loader!./registracion-dialog.component.html */ "./node_modules/raw-loader/index.js!./src/app/componentes/registracion-dialog/registracion-dialog.component.html"),
+            styles: [__webpack_require__(/*! ./registracion-dialog.component.css */ "./src/app/componentes/registracion-dialog/registracion-dialog.component.css")]
+        })
+    ], RegistracionDialogComponent);
+    return RegistracionDialogComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/componentes/registro/registro.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/componentes/registro/registro.component.css ***!
@@ -2239,7 +2371,7 @@ var QuienSoyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\n/* Set a style for all buttons */\r\n\r\nbutton {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\n/* Extra styles for the cancel button */\r\n\r\n.cancelbtn {\r\n    padding: 14px 20px;\r\n    background-color: #f44336;\r\n}\r\n\r\n/* Float cancel and signup buttons and add an equal width */\r\n\r\n.cancelbtn,.signupbtn {float:left;width:50%}\r\n\r\n/* Add padding to container elements */\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\n/* The Modal (background) */\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n    padding-top: 60px;\r\n}\r\n\r\n/* Modal Content/Box */\r\n\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */\r\n    border: 1px solid #888;\r\n    width: 98%; /* Could be more or less, depending on screen size */\r\n}\r\n\r\n/* The Close Button (x) */\r\n\r\n.close {\r\n    position: absolute;\r\n    right: 35px;\r\n    top: 15px;\r\n    color: #000;\r\n    font-size: 40px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: red;\r\n    cursor: pointer;\r\n}\r\n\r\n/* Clear floats */\r\n\r\n.clearfix::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n}\r\n\r\n/* Change styles for cancel button and signup button on extra small screens */\r\n\r\n@media screen and (max-width: 300px) {\r\n    .cancelbtn, .signupbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcmVnaXN0cm8vcmVnaXN0cm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLHFCQUFxQjtJQUNyQixzQkFBc0I7SUFDdEIsc0JBQXNCO0FBQzFCOztBQUVBLGdDQUFnQzs7QUFDaEM7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IsWUFBWTtJQUNaLGVBQWU7SUFDZixXQUFXO0FBQ2Y7O0FBRUEsdUNBQXVDOztBQUN2QztJQUNJLGtCQUFrQjtJQUNsQix5QkFBeUI7QUFDN0I7O0FBRUEsMkRBQTJEOztBQUMzRCx1QkFBdUIsVUFBVSxDQUFDLFNBQVM7O0FBRTNDLHNDQUFzQzs7QUFDdEM7SUFDSSxhQUFhO0FBQ2pCOztBQUVBLDJCQUEyQjs7QUFDM0I7SUFDSSxhQUFhLEVBQUUsc0JBQXNCO0lBQ3JDLGVBQWUsRUFBRSxrQkFBa0I7SUFDbkMsVUFBVSxFQUFFLGVBQWU7SUFDM0IsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXLEVBQUUsZUFBZTtJQUM1QixZQUFZLEVBQUUsZ0JBQWdCO0lBQzlCLGNBQWMsRUFBRSw0QkFBNEI7SUFDNUMsNEJBQTRCLEVBQUUsbUJBQW1CO0lBQ2pELGlDQUFpQyxFQUFFLHFCQUFxQjtJQUN4RCxpQkFBaUI7QUFDckI7O0FBRUEsc0JBQXNCOztBQUN0QjtJQUNJLHlCQUF5QjtJQUN6Qix3QkFBd0IsRUFBRSxzREFBc0Q7SUFDaEYsc0JBQXNCO0lBQ3RCLFVBQVUsRUFBRSxvREFBb0Q7QUFDcEU7O0FBRUEseUJBQXlCOztBQUN6QjtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsU0FBUztJQUNULFdBQVc7SUFDWCxlQUFlO0lBQ2YsaUJBQWlCO0FBQ3JCOztBQUVBOztJQUVJLFVBQVU7SUFDVixlQUFlO0FBQ25COztBQUVBLGlCQUFpQjs7QUFDakI7SUFDSSxXQUFXO0lBQ1gsV0FBVztJQUNYLGNBQWM7QUFDbEI7O0FBRUEsNkVBQTZFOztBQUM3RTtJQUNJO09BQ0csV0FBVztJQUNkO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9yZWdpc3Ryby9yZWdpc3Ryby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT10ZXh0XSwgaW5wdXRbdHlwZT1wYXNzd29yZF0ge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAxMnB4IDIwcHg7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbi8qIFNldCBhIHN0eWxlIGZvciBhbGwgYnV0dG9ucyAqL1xyXG5idXR0b24ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIHBhZGRpbmc6IDE0cHggMjBweDtcclxuICAgIG1hcmdpbjogOHB4IDA7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLyogRXh0cmEgc3R5bGVzIGZvciB0aGUgY2FuY2VsIGJ1dHRvbiAqL1xyXG4uY2FuY2VsYnRuIHtcclxuICAgIHBhZGRpbmc6IDE0cHggMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XHJcbn1cclxuXHJcbi8qIEZsb2F0IGNhbmNlbCBhbmQgc2lnbnVwIGJ1dHRvbnMgYW5kIGFkZCBhbiBlcXVhbCB3aWR0aCAqL1xyXG4uY2FuY2VsYnRuLC5zaWdudXBidG4ge2Zsb2F0OmxlZnQ7d2lkdGg6NTAlfVxyXG5cclxuLyogQWRkIHBhZGRpbmcgdG8gY29udGFpbmVyIGVsZW1lbnRzICovXHJcbi5jb250YWluZXIge1xyXG4gICAgcGFkZGluZzogMTZweDtcclxufVxyXG5cclxuLyogVGhlIE1vZGFsIChiYWNrZ3JvdW5kKSAqL1xyXG4ubW9kYWwge1xyXG4gICAgZGlzcGxheTogbm9uZTsgLyogSGlkZGVuIGJ5IGRlZmF1bHQgKi9cclxuICAgIHBvc2l0aW9uOiBmaXhlZDsgLyogU3RheSBpbiBwbGFjZSAqL1xyXG4gICAgei1pbmRleDogMTsgLyogU2l0IG9uIHRvcCAqL1xyXG4gICAgbGVmdDogMDtcclxuICAgIHRvcDogMDtcclxuICAgIHdpZHRoOiAxMDAlOyAvKiBGdWxsIHdpZHRoICovXHJcbiAgICBoZWlnaHQ6IDEwMCU7IC8qIEZ1bGwgaGVpZ2h0ICovXHJcbiAgICBvdmVyZmxvdzogYXV0bzsgLyogRW5hYmxlIHNjcm9sbCBpZiBuZWVkZWQgKi9cclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigwLDAsMCk7IC8qIEZhbGxiYWNrIGNvbG9yICovXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7IC8qIEJsYWNrIHcvIG9wYWNpdHkgKi9cclxuICAgIHBhZGRpbmctdG9wOiA2MHB4O1xyXG59XHJcblxyXG4vKiBNb2RhbCBDb250ZW50L0JveCAqL1xyXG4ubW9kYWwtY29udGVudCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xyXG4gICAgbWFyZ2luOiA1JSBhdXRvIDE1JSBhdXRvOyAvKiA1JSBmcm9tIHRoZSB0b3AsIDE1JSBmcm9tIHRoZSBib3R0b20gYW5kIGNlbnRlcmVkICovXHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xyXG4gICAgd2lkdGg6IDk4JTsgLyogQ291bGQgYmUgbW9yZSBvciBsZXNzLCBkZXBlbmRpbmcgb24gc2NyZWVuIHNpemUgKi9cclxufVxyXG5cclxuLyogVGhlIENsb3NlIEJ1dHRvbiAoeCkgKi9cclxuLmNsb3NlIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHJpZ2h0OiAzNXB4O1xyXG4gICAgdG9wOiAxNXB4O1xyXG4gICAgY29sb3I6ICMwMDA7XHJcbiAgICBmb250LXNpemU6IDQwcHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLmNsb3NlOmhvdmVyLFxyXG4uY2xvc2U6Zm9jdXMge1xyXG4gICAgY29sb3I6IHJlZDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLyogQ2xlYXIgZmxvYXRzICovXHJcbi5jbGVhcmZpeDo6YWZ0ZXIge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIGNsZWFyOiBib3RoO1xyXG4gICAgZGlzcGxheTogdGFibGU7XHJcbn1cclxuXHJcbi8qIENoYW5nZSBzdHlsZXMgZm9yIGNhbmNlbCBidXR0b24gYW5kIHNpZ251cCBidXR0b24gb24gZXh0cmEgc21hbGwgc2NyZWVucyAqL1xyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xyXG4gICAgLmNhbmNlbGJ0biwgLnNpZ251cGJ0biB7XHJcbiAgICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxufSJdfQ== */"
+module.exports = "#decline {\r\n    background-color: red;\r\n    color: white;\r\n}\r\n\r\n#accept {\r\n    background-color: rgb(0, 255, 0);\r\n    float: right;\r\n    color: white;\r\n}\r\n\r\n#termsAndConditions {\r\n    margin: 1% 2%;\r\n    background-color: var(--tertiary-color);\r\n    color: white;\r\n}\r\n\r\n#hint {\r\n    color: white;\r\n    font-size: .5rem;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcmVnaXN0cm8vcmVnaXN0cm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHFCQUFxQjtJQUNyQixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksZ0NBQWdDO0lBQ2hDLFlBQVk7SUFDWixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHVDQUF1QztJQUN2QyxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3JlZ2lzdHJvL3JlZ2lzdHJvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjZGVjbGluZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbiNhY2NlcHQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsIDI1NSwgMCk7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbiN0ZXJtc0FuZENvbmRpdGlvbnMge1xyXG4gICAgbWFyZ2luOiAxJSAyJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRlcnRpYXJ5LWNvbG9yKTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI2hpbnQge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiAuNXJlbTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -2255,20 +2387,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistroComponent", function() { return RegistroComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _registracion_dialog_registracion_dialog_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../registracion-dialog/registracion-dialog.component */ "./src/app/componentes/registracion-dialog/registracion-dialog.component.ts");
 
 
-//para poder hacer las validaciones
-//import { Validators, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+
+
+
 var RegistroComponent = /** @class */ (function () {
-    /* constructor( private miConstructor:FormBuilder) { }
-     email=new FormControl('',[Validators.email]);
-     formRegistro:FormGroup=this.miConstructor.group({
-       usuario:this.email
-     });*/
-    function RegistroComponent() {
+    function RegistroComponent(router, dialog) {
+        this.router = router;
+        this.dialog = dialog;
     }
     RegistroComponent.prototype.ngOnInit = function () {
     };
+    RegistroComponent.prototype.decline = function () {
+        this.router.navigate(['']);
+    };
+    RegistroComponent.prototype.accept = function () {
+        var DIALOG_CONFIG = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        DIALOG_CONFIG.height = '45%';
+        DIALOG_CONFIG.width = '60%';
+        this.dialog.open(_registracion_dialog_registracion_dialog_component__WEBPACK_IMPORTED_MODULE_4__["RegistracionDialogComponent"], DIALOG_CONFIG);
+    };
+    RegistroComponent.ctorParameters = function () { return [
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+        { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    ]; };
     RegistroComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-registro',
@@ -2581,6 +2727,13 @@ var FirebaseAuthService = /** @class */ (function () {
     };
     FirebaseAuthService.prototype.logOut = function () {
         return this.afsAuth.auth.signOut();
+    };
+    FirebaseAuthService.prototype.registerEmailUser = function (email, passowrd) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.afsAuth.auth.createUserWithEmailAndPassword(email, passowrd).
+                then(function (userData) { return resolve(userData); }, function (err) { return reject(err); });
+        });
     };
     FirebaseAuthService.ctorParameters = function () { return [
         { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] }
